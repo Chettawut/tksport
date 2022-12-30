@@ -14,7 +14,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'เพิ่มสี '.$_POST["add_colorname"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'เพิ่มกีฬา '.$_POST["add_colorname"].' สำเร็จ'));
         }
         else
         {

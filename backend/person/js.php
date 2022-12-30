@@ -4,19 +4,19 @@ $(function() {
     
     $.ajax({
         type: "POST",
-        url: "ajax/get_color.php",        
+        url: "ajax/get_person.php",        
         success: function(result) {
 
-            for (count = 0; count < result.colorcode.length; count++) {
+            for (count = 0; count < result.percode.length; count++) {
 
-                $('#tableColor').append(
+                $('#tablePerson').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .colorcode[
-                        count] + '" data-whatever="' + result.colorcode[
-                        count] + '"><td style="text-align:center">' + result.colorcode[count] + '</td><td  style="text-align:center">' + result.colorname[count] + '</td></tr>');
+                    .percode[
+                        count] + '" data-whatever="' + result.percode[
+                        count] + '"><td style="text-align:center">' + result.percode[count] + '</td><td  style="text-align:center">' + result.firstname[count] + ' ' + result.lastname[count] + '</td><td  style="text-align:center">' + result.type[count] + '</td></tr>');
             }
 
-            var table = $('#tableColor').DataTable({
+            var table = $('#tablePerson').DataTable({
                 "paging": true,
                 "lengthChange": false,
                 "searching": true,
@@ -47,11 +47,11 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_color.php",
+        url: "ajax/getsup_person.php",
         data: "idcode=" + recipient,
         success: function(result) {     
-            modal.find('.modal-body #colorcode').val(result.colorcode);
-            modal.find('.modal-body #colorname').val(result.colorname);
+            modal.find('.modal-body #percode').val(result.percode);
+            modal.find('.modal-body #firstname').val(result.firstname);
 
 
         }
@@ -62,13 +62,14 @@ $("#btnRefresh").click(function() {
     window.location.reload();
 });
 
-//เพิ่ม Color
-$("#frmAddColor").submit(function(e) {
+//เพิ่ม Person
+$("#frmAddPerson").submit(function(e) {
     e.preventDefault();
+    // alert($("#frmAddPerson").serialize())
     $.ajax({
         type: "POST",
-        url: "ajax/add_color.php",
-        data: $("#frmAddColor").serialize(),
+        url: "ajax/add_person.php",
+        data: $("#frmAddPerson").serialize(),
         success: function(result) {
             if (result.status == 1) // Success
             {

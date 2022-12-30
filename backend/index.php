@@ -13,8 +13,8 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
-                width="60">
+            <img class="animation__shake" src="<?php echo PATH; ?>/img/logo.png" alt="AdminLTELogo" height="80"
+                width="90">
         </div>
 
         <?php include_once('menu_head.php'); ?>
@@ -23,9 +23,9 @@
 
 
 
-        
+
         <div class="content-wrapper">
-            
+
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -43,7 +43,7 @@
             </div>
             <section class="content">
                 <div class="container-fluid">
-                    
+
                 </div>
             </section>
         </div>

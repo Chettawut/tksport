@@ -21,12 +21,20 @@
         </div>
 
         <nav class="mt-2" id="sidemenu">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">                
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a  class="nav-link">
-                        <i class="nav-icon fa fa-bars"></i>
+                    <a href="<?php echo PATH; ?>/person" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
-                        ค่าพื้นฐาน
+                            ข้อมูลบุคคล (Person)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="nav-icon fa fa-cogs"></i>
+                        <p>
+                            ค่าพื้นฐาน
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -40,14 +48,6 @@
                     </ul>
                 </li>
                 <!-- <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/store/wd" class="nav-link">
-                        <i class="nav-icon fas fa-light fa-cubes"></i>
-                        <p>
-                            ใบเบิกสินค้า (Goods Issued)
-                        </p>
-                    </a>
-                </li>                
-                <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">
                         <i class="nav-icon 	fa fa-book"></i>
                         <p>

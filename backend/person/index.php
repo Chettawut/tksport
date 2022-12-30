@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once('../../conn.php');
+include_once('../conn.php');
 ?>
 <!DOCTYPE html>
 
@@ -10,11 +10,11 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Color</title>
+    <title>Person</title>
 
     <?php 
     include_once('css.php'); 
-    include_once('../../config.php');
+    include_once('../config.php');
     include_once ROOT .'/func.php';
     include_once ROOT .'/import_css.php';    
     ?>
@@ -40,12 +40,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Color</h1>
+                            <h1 class="m-0">Person</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">Default</a></li>
-                                <li class="breadcrumb-item">Color</li>
+                                <li class="breadcrumb-item">Person</li>
                             </ol>
                         </div>
                     </div>
@@ -58,11 +58,10 @@ include_once('../../conn.php');
                         <div class="col-lg-6 col-6">
                             <form data-ajax="false" target="_blank" method="post">
                                 <div data-role="fieldcontain">
-
                                     <div class="btn-group" id="btnAdd" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่ม Color</button>
+                                            เพิ่ม Person</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -72,30 +71,24 @@ include_once('../../conn.php');
                                                 aria-hidden="true"></i>
                                             ย้อนกลับ</button>
                                     </div>
-
-
-
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <div id="mainStock">
-                                <table name="tableColor" id="tableColor" class="table table-bordered table-striped">
-                                    <thead style=" background-color:#D6EAF8;">
-                                        <tr>
-                                            <th width="30%" style="text-align:center">รหัส Color</th>
-                                            <th width="70%" style="text-align:center">ชื่อ Color</th>
+                            <table name="tablePerson" id="tablePerson" class="table table-bordered table-striped">
+                                <thead style=" background-color:#D6EAF8;">
+                                    <tr>
+                                        <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                        <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                        <th width="20%" style="text-align:center">ประเภท</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
