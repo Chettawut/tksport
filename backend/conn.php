@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "tksport"; // 
-$password = ""; // 
+$password = "tksport66"; // 
 $dbname = "tksport";
 
 // Create connection
