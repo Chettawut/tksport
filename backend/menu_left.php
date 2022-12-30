@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo PATH; ?>" class="brand-link">
-        <img src="<?php echo PATH; ?>/img/logo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8;background-color:white;">
+        <img src="<?php echo PATH; ?>/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8;background-color:white;">
         <span class="brand-text font-weight-light">Demo</span>
     </a>
 
@@ -20,56 +20,33 @@
             </div>
         </div>
 
-        <nav class="mt-2" id="sideStore" style="display:none;">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <nav class="mt-2" id="sidemenu">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">                
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/store/rr" class="nav-link">
-                        <i class="nav-icon fa fa-truck"></i>
+                    <a  class="nav-link">
+                        <i class="nav-icon fa fa-bars"></i>
                         <p>
-                            ใบรับสินค้า (Goods Receipt)
+                        ค่าพื้นฐาน
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?php echo PATH; ?>/default/color" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Color</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="<?php echo PATH; ?>/store/wd" class="nav-link">
                         <i class="nav-icon fas fa-light fa-cubes"></i>
                         <p>
                             ใบเบิกสินค้า (Goods Issued)
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/store/inventory" class="nav-link">
-                        <i class="nav-icon fa fa-cube"></i>
-                        <p>
-                            วัสดุพื้นฐาน (Inventory)
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/store/unit" class="nav-link">
-                        <i class="nav-icon 	fa fa-tag"></i>
-                        <p>
-                            หน่วยวัสดุ (Unit)
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/store/warehouse" class="nav-link">
-                        <i class="nav-icon fas fa-warehouse"></i>
-                        <p>
-                            คลังสินค้า (Warehouse)
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/store/project" class="nav-link">
-                        <i class="nav-icon fas fa-clipboard-check"></i>
-                        <p>
-                            Cost Project
-                        </p>
-                    </a>
-                </li>
+                </li>                
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">
                         <i class="nav-icon 	fa fa-book"></i>
@@ -77,7 +54,7 @@
                             รายงาน (Reports)
                         </p>
                     </a>
-                </li>
+                </li> -->
 
 
             </ul>

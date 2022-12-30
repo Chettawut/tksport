@@ -1,9 +1,9 @@
 ﻿<?php
 
 $servername = "localhost";
-$username = "tksport"; // 
+$username = "tksportc_tksport"; // 
 $password = "tksport66"; // 
-$dbname = "tksport";
+$dbname = "tksportc_tksport";
 
 // Create connection
 // $conn = mysqli_connect($servername,$username,$password,$dbname);
