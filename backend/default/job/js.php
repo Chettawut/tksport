@@ -4,25 +4,25 @@ $(function() {
     
     $.ajax({
         type: "POST",
-        url: "ajax/get_sport.php",        
+        url: "ajax/get_job.php",        
         success: function(result) {
 
-            for (count = 0; count < result.spcode.length; count++) {
+            for (count = 0; count < result.jobcode.length; count++) {
 
                 let status
                 if(result.status[count]=='Y')
                 status = 'เปิดใช้งาน'
                 else
                 status = 'ปิดใช้งาน'
-                
-                $('#tableSport').append(
+
+                $('#tableJob').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .spcode[
-                        count] + '" data-whatever="' + result.spcode[
-                        count] + '"><td style="text-align:center">' + result.spcode[count] + '</td><td  style="text-align:center">' + result.spname[count] + '</td><td  style="text-align:center">' + status + '</td></tr>');
+                    .jobcode[
+                        count] + '" data-whatever="' + result.jobcode[
+                        count] + '"><td style="text-align:center">' + result.jobcode[count] + '</td><td  style="text-align:center">' + result.jobname[count] + '</td><td  style="text-align:center">' + status + '</td></tr>');
             }
 
-            var table = $('#tableSport').DataTable({
+            var table = $('#tableJob').DataTable({
                 "paging": true,
                 "lengthChange": false,
                 "searching": true,
@@ -53,12 +53,12 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_sport.php",
+        url: "ajax/getsup_job.php",
         data: "idcode=" + recipient,
         success: function(result) {     
-            modal.find('.modal-body #spcode').val(result.spcode);
-            modal.find('.modal-body #spname').val(result.spname);
-
+            modal.find('.modal-body #jobcode').val(result.jobcode);
+            modal.find('.modal-body #jobname').val(result.jobname);
+            modal.find('.modal-body #status').val(result.status);
 
         }
     });
@@ -68,13 +68,13 @@ $("#btnRefresh").click(function() {
     window.location.reload();
 });
 
-//เพิ่ม Sport
-$("#frmAddSport").submit(function(e) {
+//เพิ่ม Job
+$("#frmAddJob").submit(function(e) {
     e.preventDefault();
     $.ajax({
         type: "POST",
-        url: "ajax/add_sport.php",
-        data: $("#frmAddSport").serialize(),
+        url: "ajax/add_job.php",
+        data: $("#frmAddJob").serialize(),
         success: function(result) {
             if (result.status == 1) // Success
             {
@@ -90,15 +90,15 @@ $("#frmAddSport").submit(function(e) {
 
 });
 
-$("#frmEditSport").submit(function(e) {
+$("#frmEditJob").submit(function(e) {
     e.preventDefault();
     $(':disabled').each(function(e) {
         $(this).removeAttr('disabled');
     })
     $.ajax({
         type: "POST",
-        url: "ajax/edit_sport.php",
-        data: $("#frmEditSport").serialize(),
+        url: "ajax/edit_job.php",
+        data: $("#frmEditJob").serialize(),
         success: function(result) {
 
             if (result.status == 1) // Success

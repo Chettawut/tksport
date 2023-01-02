@@ -3,24 +3,24 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เพิ่ม Sport</h5>
+                <h5 class="modal-title">เพิ่ม Job</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="frmAddSport" id="frmAddSport" method="POST" style="padding:10px;" action="javascript:void(0);">
+            <form name="frmAddJob" id="frmAddJob" method="POST" style="padding:10px;" action="javascript:void(0);">
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-lg-6 col-12">
-                            <label class="col-form-label">ชื่อ Sport</label>
-                            <input type="text" class="form-control" name="add_spname" id="add_spname" required>
+                            <label class="col-form-label">ชื่อ Job</label>
+                            <input type="text" class="form-control" name="add_jobname" id="add_jobname" required>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="col text-center">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        <button type="submit" id="btnAddSport" form="frmAddSport" class="btn btn-primary">ตกลง</button>
+                        <button type="submit" id="btnAddJob" form="frmAddJob" class="btn btn-primary">ตกลง</button>
                     </div>
                 </div>
 

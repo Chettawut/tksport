@@ -10,7 +10,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sport</title>
+    <title>Job</title>
 
     <?php 
     include_once('css.php'); 
@@ -40,12 +40,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Sport</h1>
+                            <h1 class="m-0">Job</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">Default</a></li>
-                                <li class="breadcrumb-item">Sport</li>
+                                <li class="breadcrumb-item">Job</li>
                             </ol>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ include_once('../../conn.php');
                                     <div class="btn-group" id="btnAdd" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่ม Sport</button>
+                                            เพิ่ม Job</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -82,12 +82,12 @@ include_once('../../conn.php');
                     <div class="row">
                         <div class="col-lg-12 col-12">
                             <div id="mainStock">
-                                <table name="tableSport" id="tableSport" class="table table-bordered table-striped">
+                                <table name="tableJob" id="tableJob" class="table table-bordered table-striped">
                                     <thead style=" background-color:#D6EAF8;">
                                         <tr>
-                                            <th width="20%" style="text-align:center">รหัส Sport</th>
-                                            <th width="60%" style="text-align:center">ชื่อ Sport</th>
-                                            <th width="20%" style="text-align:center">สถานะการใช้งาน</th>
+                                            <th width="20%" style="text-align:center">รหัส Job</th>
+                                            <th width="60%" style="text-align:center">ชื่อ Job</th>
+                                            <th width="20%" style="text-align:center">สถานะ</th>
 
                                         </tr>
                                     </thead>

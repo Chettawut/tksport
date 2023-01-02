@@ -3,9 +3,9 @@
     include('../../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
     
-    $StrSQL = "INSERT INTO sport ( `spname`,`status`) ";
+    $StrSQL = "INSERT INTO job ( `jobname`,`status`) ";
     $StrSQL .= "VALUES (";
-    $StrSQL .= "'".$_POST["add_spname"]."','Y' ";
+    $StrSQL .= "'".$_POST["add_jobname"]."','Y' ";
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
     
@@ -14,7 +14,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'เพิ่มกีฬา '.$_POST["add_spname"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'เพิ่มงาน '.$_POST["add_jobname"].' สำเร็จ'));
         }
         else
         {

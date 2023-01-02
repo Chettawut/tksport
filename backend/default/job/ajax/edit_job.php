@@ -4,9 +4,9 @@
     
     date_default_timezone_set("Asia/Bangkok");
 
-    $strSQL = "UPDATE sport SET ";
-    $strSQL .= "spname='".$_POST["spname"]."',status='".$_POST["status"]."' ";
-    $strSQL .= "WHERE spcode= '".$_POST["spcode"]."' ";
+    $strSQL = "UPDATE job SET ";
+    $strSQL .= "jobname='".$_POST["jobname"]."',status='".$_POST["status"]."' ";
+    $strSQL .= "WHERE jobcode= '".$_POST["jobcode"]."' ";
 
     
 	$query = mysqli_query($conn,$strSQL);
@@ -15,7 +15,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'แก้ไข Sport '.$_POST["spname"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'แก้ไข Job '.$_POST["jobname"].' สำเร็จ'));
         }
         else
         {

@@ -3,17 +3,17 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">แก้ไข Sport</h5>
+                <h5 class="modal-title">แก้ไข Job</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="frmEditSport" id="frmEditSport" method="POST" style="padding:10px;" action="javascript:void(0);">
+            <form name="frmEditJob" id="frmEditJob" method="POST" style="padding:10px;" action="javascript:void(0);">
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-lg-8 col-12">
-                            <label class="col-form-label">ชื่อ Sport</label>
-                            <input type="text" class="form-control" name="spname" id="spname" required>
+                            <label class="col-form-label">ชื่อ Job</label>
+                            <input type="text" class="form-control" name="jobname" id="jobname" required>
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
@@ -23,11 +23,11 @@
                             </select>
                         </div>
                     </div>
-                    <input type="hidden" id="spcode" name="spcode">
+                    <input type="hidden" id="jobcode" name="jobcode">
                     <div class="modal-footer">
                         <div class="col text-center">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                            <button type="submit" id="btnEditSport" form="frmEditSport"
+                            <button type="submit" id="btnEditJob" form="frmEditJob"
                                 class="btn btn-primary">แก้ไข</button>
                         </div>
                     </div>
