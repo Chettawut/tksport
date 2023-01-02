@@ -26,6 +26,22 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="form-group col-lg-5 col-12">
+                            <label class="col-form-label">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" required>
+                        </div>
+                        <div class="form-group col-lg-5 col-12">
+                            <label class="col-form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" required disabled>
+                        </div>
+                        <div class="form-group col-lg-2 col-12">
+                            <label class="col-form-label">รีเซ็ต Password</label>
+                            <button type="button" class="btn btn-secondary form-control" data-toggle="modal"
+                                            data-target="#modal_reset" data-dismiss="modal">Reset</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
                         <div class="form-group col-lg-2 col-12">
                             <label class="col-form-label">คำนำหน้า</label>
                             <select class="form-control" name="titlename" id="titlename" required>

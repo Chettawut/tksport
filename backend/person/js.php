@@ -50,7 +50,9 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         url: "ajax/getsup_person.php",
         data: "idcode=" + recipient,
         success: function(result) {     
-            modal.find('.modal-body #percode').val(result.percode);
+            modal.find('.modal-body #percode').val(result.percode);            
+            modal.find('.modal-body #username').val(result.username);            
+            modal.find('.modal-body #password').val(result.password);            
             modal.find('.modal-body #firstname').val(result.firstname);
             modal.find('.modal-body #lastname').val(result.lastname);
             modal.find('.modal-body #type').val(result.type);
@@ -60,6 +62,9 @@ $('#modal_edit').on('show.bs.modal', function(event) {
             modal.find('.modal-body #pergroup').val(result.pergroup);
             modal.find('.modal-body #telephone').val(result.telephone);
 
+            $('#perresetcode').val(result.percode);            
+            $('#resetfirstname').val(result.firstname);
+            $('#resetlastname').val(result.lastname);
         }
     });
 });
@@ -83,7 +88,7 @@ $("#frmAddPerson").submit(function(e) {
                 window.location.reload();
                 // console.log(result.message);
             } else {
-                alert('รหัสซ้ำ');
+                alert('รหัสประจำตัวซ้ำ');
             }
         }
     });
@@ -112,4 +117,25 @@ $("#frmEditPerson").submit(function(e) {
     });
 
 });
+
+$("#frmReset").submit(function(e) {
+    e.preventDefault();
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/reset_password.php",
+        data: $("#frmReset").serialize(),
+        success: function(result) {
+
+            if (result.status == 1) // Success
+            {
+                alert(result.message);
+                window.location.reload();
+                // console.log(result.message);
+            }
+        }
+    });
+
+});
+
 </script>

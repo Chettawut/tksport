@@ -7,6 +7,8 @@
 	
 	$json_result=array(
         "percode" => array(),
+		"username" => array(),
+		"password" => array(),
 		"firstname" => array(),
 		"lastname" => array(),
 		"type" => array(),
@@ -20,6 +22,8 @@
 		
         while($row = $query->fetch_assoc()) {
             array_push($json_result['percode'],$row["percode"]);
+			array_push($json_result['username'],$row["username"]);
+			array_push($json_result['password'],$row["password"]);
 			array_push($json_result['firstname'],$row["firstname"]);
 			array_push($json_result['lastname'],$row["lastname"]);
 			array_push($json_result['type'],$row["type"]);

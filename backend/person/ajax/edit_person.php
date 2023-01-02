@@ -6,7 +6,8 @@
 
     $strSQL = "UPDATE person SET ";
     $strSQL .= "firstname='".$_POST["firstname"]."',lastname='".$_POST["lastname"]."' ";
-    $strSQL .= ",type='".$_POST["type"]."',level='".$_POST["level"]."',room='".$_POST["room"]."' ";
+    $strSQL .= ",username='".$_POST["username"]."',type='".$_POST["type"]."' ";
+    $strSQL .= ",level='".$_POST["level"]."',room='".$_POST["room"]."' ";
     $strSQL .= ",colorcode='".$_POST["colorcode"]."',pergroup='".$_POST["pergroup"]."',telephone='".$_POST["telephone"]."' ";
     $strSQL .= "WHERE percode ='".$_POST["percode"]."' ";
 
