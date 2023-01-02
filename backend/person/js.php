@@ -52,7 +52,13 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         success: function(result) {     
             modal.find('.modal-body #percode').val(result.percode);
             modal.find('.modal-body #firstname').val(result.firstname);
-
+            modal.find('.modal-body #lastname').val(result.lastname);
+            modal.find('.modal-body #type').val(result.type);
+            modal.find('.modal-body #level').val(result.level);
+            modal.find('.modal-body #room').val(result.room);
+            modal.find('.modal-body #colorcode').val(result.colorcode);
+            modal.find('.modal-body #pergroup').val(result.pergroup);
+            modal.find('.modal-body #telephone').val(result.telephone);
 
         }
     });
@@ -85,15 +91,15 @@ $("#frmAddPerson").submit(function(e) {
 
 });
 
-$("#frmEditColor").submit(function(e) {
+$("#frmEditPerson").submit(function(e) {
     e.preventDefault();
     $(':disabled').each(function(e) {
         $(this).removeAttr('disabled');
     })
     $.ajax({
         type: "POST",
-        url: "ajax/edit_color.php",
-        data: $("#frmEditColor").serialize(),
+        url: "ajax/edit_person.php",
+        data: $("#frmEditPerson").serialize(),
         success: function(result) {
 
             if (result.status == 1) // Success

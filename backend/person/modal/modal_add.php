@@ -8,7 +8,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="frmAddPerson" id="frmAddPerson" method="POST" style="padding:10px;" action="javascript:void(0);">
+            <form name="frmAddPerson" id="frmAddPerson" method="POST" style="padding:10px;"
+                action="javascript:void(0);">
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-lg-6 col-12">
@@ -17,24 +18,71 @@
                         </div>
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">ประเภท</label>
-                            <input type="text" class="form-control" name="add_type" id="add_type" required>
+                            <select class="form-control" name="add_type" id="add_type" required>
+                                <option value="นักเรียน">นักเรียน</option>
+                                <option value="คุณครู">คุณครู</option>
+                                <option value="admin">admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-2 col-12">
+                            <label class="col-form-label">คำนำหน้า</label>
+                            <select class="form-control" name="add_titlename" id="add_titlename" required>
+                                <option value="นาย">นาย</option>
+                                <option value="นาง">นาง</option>
+                                <option value="นางสาว">นางสาว</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-5 col-12">
+                            <label class="col-form-label">ชื่อจริง</label>
+                            <input type="text" class="form-control" name="add_firstname" id="add_firstname" required>
+                        </div>
+                        <div class="form-group col-lg-5 col-12">
+                            <label class="col-form-label">นามสกุล</label>
+                            <input type="text" class="form-control" name="add_lastname" id="add_lastname" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-4 col-12">
+                            <label class="col-form-label">ระดับชั้น</label>
+                            <input type="text" class="form-control" name="add_level" id="add_level" required>
+                        </div>
+                        <div class="form-group col-lg-4 col-12">
+                            <label class="col-form-label">ห้อง</label>
+                            <input type="text" class="form-control" name="add_room" id="add_room" required>
+                        </div>
+                        <div class="form-group col-lg-4 col-12">
+                            <label class="col-form-label">สีที่อยู่</label>
+                            <select class="form-control" name="add_colorcode" id="add_colorcode" required>
+                                <?php 
+                                            include('../conn.php');
+                                        	$sql = "SELECT * FROM `color`  ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["colorcode"].'">'.$row["colorname"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-6 col-12">
-                            <label class="col-form-label">ชื่อจริง</label>
-                            <input type="text" class="form-control" name="add_firstname" id="add_firstname" required>
+                            <label class="col-form-label">กลุ่มสาระ</label>
+                            <input type="text" class="form-control" name="add_pergroup" id="add_pergroup" required>
                         </div>
                         <div class="form-group col-lg-6 col-12">
-                            <label class="col-form-label">นามสกุล</label>
-                            <input type="text" class="form-control" name="add_lastname" id="add_lastname" required>
+                            <label class="col-form-label">เบอร์โทรศัพท์</label>
+                            <input type="text" class="form-control" name="add_telephone" id="add_telephone" required>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="col text-center">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        <button type="submit" id="btnAddPerson" form="frmAddPerson" class="btn btn-primary">ตกลง</button>
+                        <button type="submit" id="btnAddPerson" form="frmAddPerson"
+                            class="btn btn-primary">ตกลง</button>
                     </div>
                 </div>
 

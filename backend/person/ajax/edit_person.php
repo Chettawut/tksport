@@ -1,12 +1,14 @@
 <?php
 	header('Content-Type: application/json');
-	include('../../../conn.php');
+	include('../../conn.php');
     
     date_default_timezone_set("Asia/Bangkok");
 
-    $strSQL = "UPDATE color SET ";
-    $strSQL .= "colorname='".$_POST["colorname"]."' ";
-    $strSQL .= "WHERE colorcode= '".$_POST["colorcode"]."' ";
+    $strSQL = "UPDATE person SET ";
+    $strSQL .= "firstname='".$_POST["firstname"]."',lastname='".$_POST["lastname"]."' ";
+    $strSQL .= ",type='".$_POST["type"]."',level='".$_POST["level"]."',room='".$_POST["room"]."' ";
+    $strSQL .= ",colorcode='".$_POST["colorcode"]."',pergroup='".$_POST["pergroup"]."',telephone='".$_POST["telephone"]."' ";
+    $strSQL .= "WHERE percode ='".$_POST["percode"]."' ";
 
     
 	$query = mysqli_query($conn,$strSQL);
@@ -15,7 +17,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'แก้ไข Color '.$_POST["colorname"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'แก้ไขรหัสบุคคล '.$_POST["percode"].' สำเร็จ'));
         }
         else
         {

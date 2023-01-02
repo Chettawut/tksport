@@ -89,4 +89,115 @@
 }
 
 
+/* -------------------------------------------------------- header end -------------------------------------------------------- */
 
+.icon-change:hover{
+  filter: invert(1);
+  transition: 0.2s;
+
+}
+
+.btn-primary{
+  background-color: #FF914D;
+  border: none;
+}
+
+.search {
+  margin: 16px 16px 0 0;
+}
+
+.modal-title {
+  font-size: 24px;
+}
+
+.modal-header {
+  background-color: #FF914D;
+  color: #fff;
+  
+}
+
+.modal-body {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  text-align: center;
+  
+}
+
+.FillUser {
+  border: none;
+  border-bottom: 1px solid #333;
+  margin-top: 2rem;
+
+}
+
+.space {
+  margin-bottom: 32px;
+}
+
+.modal-footer-f {
+  border: none;
+  /* border-top: 1px solid #333; */
+  
+}
+
+.modal-footer input {
+  color: #fff;
+  background-color: #FF914D;
+}
+
+.modal-footer input:hover {
+  color: #fff;
+  background-color: #FF914D;
+}
+
+.modal-footer .change {
+  color: #fff;
+  background-color: #FF914D;
+}
+.modal-footer .change:hover {
+  color: #fff;
+  background-color: #FF914D;
+}
+
+
+.SignUp {
+  background-color: #FF914D;
+  border: #fff;
+  color: #fff;
+  margin-right: 30%;
+  padding: 5px;
+  border-radius: 5px;
+  
+}
+/* -------------------------------------------------------- login end -------------------------------------------------------- */
+@media only screen and (min-width: 992px) {
+  .search {
+    margin: 0 16px 0 0;
+  }
+}
+@media only screen and (max-width: 725px) {
+  .SignUp {
+    background-color: #FF914D;
+    border: #fff;
+    color: #fff;
+    margin-right: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    
+  }
+}
+
+@media only screen and (max-width: 575px)  {
+  .SignUp {
+    background-color: #FF914D;
+    border: #fff;
+    color: #fff;
+    margin: auto;
+    padding: 5px;
+    border-radius: 5px;
+    
+  }
+}
