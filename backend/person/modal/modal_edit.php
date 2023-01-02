@@ -21,7 +21,7 @@
                             <select class="form-control" name="type" id="type" required>
                                 <option value="นักเรียน">นักเรียน</option>
                                 <option value="คุณครู">คุณครู</option>
-                                <option value="admin">admin</option>
+                                <option value="admin">Admin</option>
                             </select>
                         </div>
                     </div>
@@ -62,11 +62,11 @@
                     <div class="row">
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ระดับชั้น</label>
-                            <input type="text" class="form-control" name="level" id="level" required>
+                            <input type="text" class="form-control" name="level" id="level" >
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ห้อง</label>
-                            <input type="text" class="form-control" name="room" id="room" required>
+                            <input type="text" class="form-control" name="room" id="room" >
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">สีที่อยู่</label>
@@ -86,11 +86,11 @@
                     <div class="row">
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">กลุ่มสาระ</label>
-                            <input type="text" class="form-control" name="pergroup" id="pergroup" required>
+                            <input type="text" class="form-control" name="pergroup" id="pergroup" >
                         </div>
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">เบอร์โทรศัพท์</label>
-                            <input type="text" class="form-control" name="telephone" id="telephone" required>
+                            <input type="text" class="form-control" name="telephone" id="telephone" >
                         </div>
                     </div>
                 </div>

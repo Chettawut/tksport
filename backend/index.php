@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['checklogin'])) {
+        header('Location: ../');
+        exit;
+    }
+    include_once('conn.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,8 +42,8 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item">Home</li>
+                                <li class="breadcrumb-item">Dashboard</li>
                             </ol>
                         </div>
                     </div>
@@ -43,7 +51,63 @@
             </div>
             <section class="content">
                 <div class="container-fluid">
-
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%">อันดับ</th>
+                                        <th style="width: 50%">ชื่อสี</th>
+                                        <th style="width: 30%">คะแนน</th>
+                                        <th style="width: 10%">Label</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>สีแดง</td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-danger" style="width: 0%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>สีฟ้า</td>
+                                        <td><span class="badge bg-primary">0</span></td>
+                                        <td>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar bg-warning" style="width: 0%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.</td>
+                                        <td>สีเขียว</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar bg-primary" style="width: 0%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4.</td>
+                                        <td>สีเหลือง</td>
+                                        <td><span class="badge bg-warning">0</span></td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar bg-success" style="width: 0%"></div>
+                                            </div>
+                                        </td>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

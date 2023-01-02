@@ -1,7 +1,10 @@
 <?php
-session_start();
-
-include_once('../../conn.php');
+    session_start();
+    if (!isset($_SESSION['checklogin'])) {
+        header('Location: ../');
+        exit;
+    }
+    include_once('../conn.php');
 ?>
 <!DOCTYPE html>
 

@@ -21,10 +21,21 @@
                             <select class="form-control" name="add_type" id="add_type" required>
                                 <option value="นักเรียน">นักเรียน</option>
                                 <option value="คุณครู">คุณครู</option>
-                                <option value="admin">admin</option>
+                                <option value="admin">Admin</option>
                             </select>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-12">
+                            <label class="col-form-label">Username</label>
+                            <input type="text" class="form-control" name="add_username" id="add_username" required>
+                        </div>
+                        <div class="form-group col-lg-6 col-12">
+                            <label class="col-form-label">Password</label>
+                            <input type="password" class="form-control" name="add_password" id="add_password" required>
+                        </div>
+                    </div>
+                    <hr>
                     <div class="row">
                         <div class="form-group col-lg-2 col-12">
                             <label class="col-form-label">คำนำหน้า</label>
@@ -46,11 +57,11 @@
                     <div class="row">
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ระดับชั้น</label>
-                            <input type="text" class="form-control" name="add_level" id="add_level" required>
+                            <input type="text" class="form-control" name="add_level" id="add_level" >
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ห้อง</label>
-                            <input type="text" class="form-control" name="add_room" id="add_room" required>
+                            <input type="text" class="form-control" name="add_room" id="add_room" >
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">สีที่อยู่</label>
@@ -70,11 +81,11 @@
                     <div class="row">
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">กลุ่มสาระ</label>
-                            <input type="text" class="form-control" name="add_pergroup" id="add_pergroup" required>
+                            <input type="text" class="form-control" name="add_pergroup" id="add_pergroup" >
                         </div>
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">เบอร์โทรศัพท์</label>
-                            <input type="text" class="form-control" name="add_telephone" id="add_telephone" required>
+                            <input type="text" class="form-control" name="add_telephone" id="add_telephone" >
                         </div>
                     </div>
                 </div>

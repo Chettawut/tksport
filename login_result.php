@@ -1,26 +1,38 @@
 <?php
 
-include('conn.php');
+include_once('backend/conn.php');
+session_start();
+
+if ($stmt = $conn->prepare('SELECT percode,password,firstname,lastname,type FROM person WHERE username = ?')) {
+	
+	$stmt->bind_param('s', $_POST['username']);
+	$stmt->execute();	
+	$stmt->store_result();
 
 
-if ( !isset($_POST['username'], $_POST['password']) ) {
-
-	exit('Please fill both the username and password fields!');
 }
 
+if ($stmt->num_rows > 0) {
+	$stmt->bind_result($percode,$password,$firstname,$lastname,$type);
+	$stmt->fetch();
 
-
-if ($_POST['username']=='test') {
-	if ($_POST['password']=='test') {
+	if (password_verify($_POST['password'], $password)) {
 
 			session_regenerate_id();
-			$_SESSION['loggedin'] = TRUE;
-			$_SESSION['name'] = $_POST['username'];
-			$_SESSION['id'] = 'test';
-			$_SESSION['firstname'] = 'test';
-			$_SESSION['lastname'] = 'test';
-		
-		
+			$_SESSION['checklogin'] = TRUE;
+			$_SESSION['username'] = $_POST['username'];
+			$_SESSION['percode'] = $percode;
+			$_SESSION['firstname'] = $firstname;
+			$_SESSION['lastname'] = $lastname;
+					
+			
+			if($type=='admin')
+			$_SESSION['type'] = 'Admin';
+			else if($type=='นักเรียน')
+			$_SESSION['type'] = 'นักเรียน';
+			else if($type=='คุณครู')
+			$_SESSION['type'] = 'คุณครู';
+			
 			
 			header( "Location: backend");
 		
@@ -32,7 +44,6 @@ if ($_POST['username']=='test') {
 	echo 'Incorrect username!';
 	header( "Location: ..?log=username");
 }
-
 
 
 ?>
