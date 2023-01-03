@@ -4,7 +4,9 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="<?php echo PATH; ?>" role="button"><i class="fas fa-bars"></i></a>
         </li>
-       
+        <li class="nav-item">
+            <a href="<?php echo PATH; ?>/../" class="btn btn-primary">Front Page</a>
+        </li>
 
     </ul>
 
@@ -15,8 +17,9 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
-        <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/logout.php" class="nav-link">Logout</a>
+        &nbsp; &nbsp;
+        <li class="nav-item">        
+            <a href="<?php echo PATH; ?>/logout.php" class="btn btn-secondary">Logout</a>
         </li>
     </ul>
 </nav>

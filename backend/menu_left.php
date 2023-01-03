@@ -16,7 +16,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"><?php echo $_SESSION['firstname']; ?> <?php echo $_SESSION['lastname']; ?></a>
+                <a href="#" class="d-block"><?php echo $_SESSION['titlename'].' '.$_SESSION['firstname'].' '.$_SESSION['lastname']; ?></a>
             </div>
         </div>
 

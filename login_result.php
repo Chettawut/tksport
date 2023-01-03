@@ -3,7 +3,7 @@
 include_once('backend/conn.php');
 session_start();
 
-if ($stmt = $conn->prepare('SELECT percode,password,firstname,lastname,type FROM person WHERE username = ?')) {
+if ($stmt = $conn->prepare('SELECT percode,password,firstname,lastname,titlename,type FROM person WHERE username = ?')) {
 	
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();	
@@ -13,7 +13,7 @@ if ($stmt = $conn->prepare('SELECT percode,password,firstname,lastname,type FROM
 }
 
 if ($stmt->num_rows > 0) {
-	$stmt->bind_result($percode,$password,$firstname,$lastname,$type);
+	$stmt->bind_result($percode,$password,$firstname,$lastname,$titlename,$type);
 	$stmt->fetch();
 
 	if (password_verify($_POST['password'], $password)) {
@@ -24,6 +24,8 @@ if ($stmt->num_rows > 0) {
 			$_SESSION['percode'] = $percode;
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname;
+			$_SESSION['titlename'] = $titlename;
+			
 					
 			
 			if($type=='admin')

@@ -1,5 +1,9 @@
+.modal2 {
+  --bs-modal-zindex: 1055;
+  --bs-modal-width: 785px;
+}
+    
 
-  
   .dropdown-item-danger {
     color: var(--bs-red);
   }
@@ -87,7 +91,10 @@
 .dropdown-show {
     display: block;
 }
-
+/* 
+::placeholder {
+  color: #000;
+} */
 
 /* -------------------------------------------------------- header end -------------------------------------------------------- */
 
@@ -106,6 +113,8 @@
   margin: 16px 16px 0 0;
 }
 
+
+
 .modal-title {
   font-size: 24px;
 }
@@ -121,9 +130,15 @@
   padding: 0;
 }
 
+
+
 form {
   text-align: center;
   
+}
+
+.container-seclect {
+  margin-top: 64px;
 }
 
 .FillUser {
@@ -133,14 +148,16 @@ form {
 
 }
 
+.name {
+  margin-top: 0;
+}
+
 .space {
   margin-bottom: 32px;
 }
 
-.modal-footer-f {
-  border: none;
-  /* border-top: 1px solid #333; */
-  
+.modal-footer {
+  margin-top: 32px;
 }
 
 .modal-footer input {
@@ -153,13 +170,13 @@ form {
   background-color: #FF914D;
 }
 
-.modal-footer .change {
+.change {
   color: #fff;
   background-color: #FF914D;
 }
-.modal-footer .change:hover {
+.change:hover {
   color: #fff;
-  background-color: #FF914D;
+  background-color: #ffa600;
 }
 
 
@@ -167,37 +184,78 @@ form {
   background-color: #FF914D;
   border: #fff;
   color: #fff;
-  margin-right: 30%;
-  padding: 5px;
+  padding:6px 12px;
   border-radius: 5px;
   
 }
 /* -------------------------------------------------------- login end -------------------------------------------------------- */
+
+.form {
+  margin: 0 10%;
+}
+
+
+.form-size {
+  width: 180px;
+  border: none;
+  border-bottom: 1px solid #333;
+  background-color: #fff;
+  color: #888;
+}
+.form-size2 {
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid #333;
+  background-color: #fff;
+  color: #888;
+}
+
+.FillID {
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid #333;
+  /* margin-top: 2rem; */
+}
+
+
+.row-top {
+  margin-top: 32px;
+}
+/* -------------------------------------------------------- sign up end -------------------------------------------------------- */
+
+
 @media only screen and (min-width: 992px) {
   .search {
     margin: 0 16px 0 0;
   }
 }
-@media only screen and (max-width: 725px) {
-  .SignUp {
-    background-color: #FF914D;
-    border: #fff;
-    color: #fff;
-    margin-right: 30%;
-    padding: 5px;
-    border-radius: 5px;
-    
-  }
-}
+@media only screen and (max-width: 650px) {
 
-@media only screen and (max-width: 575px)  {
-  .SignUp {
-    background-color: #FF914D;
-    border: #fff;
-    color: #fff;
-    margin: auto;
-    padding: 5px;
-    border-radius: 5px;
-    
+  .name {
+    margin-top: 32px;
+  }
+  
+  .row-sm {
+    margin-top: 32px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-size2 {
+    width: 180px;
+    border: none;
+    border-bottom: 1px solid #333;
+    background-color: #fff;
+    color: #888;
+  }
+  
+  .FillID {
+    width: 180px;
+    border: none;
+    border-bottom: 1px solid #333;
+    /* margin-top: 2rem; */
   }
 }

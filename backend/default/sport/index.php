@@ -4,7 +4,7 @@
         header('Location: ../');
         exit;
     }
-    include_once('../conn.php');
+    include_once('../../conn.php');
 ?>
 <!DOCTYPE html>
 
