@@ -24,6 +24,40 @@
                         </div>
                     </div>
                     <input type="hidden" id="spcode" name="spcode">
+
+                    <div class="form-group col-md-12">
+
+                                    <button type="button" id="btnAddtypeplayer" class="btn btn-success"
+                                        data-toggle="modal" data-target="#modal_typeplayer"><i class="fa fa fa-tags"
+                                            aria-hidden="true"></i>
+                                        เพิ่มประเภทนักกีฬา</button>
+                                    
+
+                                </div>
+
+                                <div style="border: 1px solid #FAEBD7;">
+                                    <br>
+
+                                    <table name="tableEditSODetail" id="tableEditSODetail"
+                                        class="table table-bordered table-striped">
+                                        <thead style="background-color:#D6EAF8;">
+                                            <tr>
+                                                <th style="width:5%;text-align:center">ลำดับ</th>
+                                                <th style="width:10%;text-align:center">รหัสสินค้า</th>
+                                                <th style="width:20%;text-align:center">รายการสินค้า</th>
+                                                <th style="width:7%;text-align:center">จำนวน</th>
+                                                <th style="width:15%;text-align:center">หน่วย</th>
+                                                <th style="width:9%;text-align:center">ราคาขาย</th>
+                                                <th style="width:10%;text-align:center">ส่วนลด</th>
+                                                <th style="width:10%;text-align:center">จำนวนเงิน</th>
+                                                <th style="width:15%;text-align:center">คลังสินค้า</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                        </tbody>
+                                    </table>
                     <div class="modal-footer">
                         <div class="col text-center">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
