@@ -31,21 +31,30 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">
-                        <i class="nav-icon fa fa-cogs"></i>
+                    <a href="<?php echo PATH; ?>/default/sport" class="nav-link">
+                        <i class="nav-icon fa fa-running"></i>
                         <p>
-                            ค่าพื้นฐาน
-                            <i class="right fas fa-angle-left"></i>
+                        Sport
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?php echo PATH; ?>/default/color" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Color</p>
-                            </a>
-                        </li>
-                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/default/job" class="nav-link">
+                        <i class="nav-icon fa fa-edit"></i>
+                        <p>
+                        Job
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/default/color" class="nav-link">
+                        <i class="nav-icon fa fa-tasks"></i>
+                        <p>
+                        Color
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="<?php echo PATH; ?>/default/sport" class="nav-link">
