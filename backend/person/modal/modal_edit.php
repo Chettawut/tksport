@@ -21,6 +21,7 @@
                             <select class="form-control" name="type" id="type" required>
                                 <option value="นักเรียน">นักเรียน</option>
                                 <option value="คุณครู">คุณครู</option>
+                                <option value="AdminColor">Admin ประจำสี</option>
                                 <option value="Admin">Admin</option>
                             </select>
                         </div>

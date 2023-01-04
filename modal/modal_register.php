@@ -40,6 +40,7 @@
                             <div class="col  ">
                                 <select name="add_level" id="add_level" class="form form-size2  "
                                     aria-label=".form-select-lg example" required>
+                                    <option value="">ชั้น</option>
                                     <option value="1">ม.1</option>
                                     <option value="2">ม.2</option>
                                     <option value="3">ม.3</option>
@@ -52,6 +53,7 @@
                             <div class="col row-sm">
                                 <select name="add_room" id="add_room" class="form form-size2 "
                                     aria-label=".form-select-lg example" required>
+                                    <option value="">ห้อง</option>
                                     <option value="1">ห้อง 1</option>
                                     <option value="2">ห้อง 2</option>
                                     <option value="3">ห้อง 3</option>
@@ -67,6 +69,7 @@
                             <div class="col row-sm">
                                 <select name="add_colorcode" id="add_colorcode" class="form form-size2 "
                                     aria-label=".form-select-lg example" required>
+                                    <option value="">สี</option>
                                     <?php 
                                         	$sql = "SELECT * FROM `color`  ";
                                             $query = mysqli_query($conn,$sql);

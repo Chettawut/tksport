@@ -15,6 +15,7 @@ include_once('backend/conn.php');
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/stu_make.css">    
+    <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
 </head>
 
 <body>
@@ -95,7 +96,7 @@ include_once('backend/conn.php');
                       <?php echo $_SESSION['titlename'].' '.$_SESSION['firstname'].' '.$_SESSION['lastname'];?>
                     </h4>
                 <button type="button" class="btn btn-outline-light me-2 " data-bs-toggle="modal"
-                        data-bs-target="#modal_job"><i class="fas fa-edit"></i> เพิ่มกิจกรรมที่ทำ
+                        data-bs-target="#modal_activity"><i class="fas fa-edit"></i> เพิ่มกิจกรรมที่ทำ
                     </button>
                     <a href="logout.php" class="btn btn-outline-light me-2">Logout</a>
                 <?php
@@ -265,7 +266,7 @@ include_once('backend/conn.php');
             </div>
         </footer>
 
-        <?php include_once('modal/modal_job.php');?>
+        <?php include_once('modal/modal_activity.php');?>
         <?php include_once('modal/modal_login.php');?>
         <?php include_once('modal/modal_register.php');?>
         
@@ -281,7 +282,7 @@ include_once('backend/conn.php');
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-            <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+            
             
             <?php include_once('js.php');?>
 </body>
