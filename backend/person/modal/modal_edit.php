@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ระดับชั้น</label>
-                            <select class="form-control" name="level" id="level" required>
+                            <select class="form-control" name="level" id="level" >
                                 <option value="1">ม.1</option>
                                 <option value="2">ม.2</option>
                                 <option value="3">ม.3</option>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ห้อง</label>
-                            <select class="form-control" name="room" id="room" required>
+                            <select class="form-control" name="room" id="room" >
                                 <option value="1">ห้อง 1</option>
                                 <option value="2">ห้อง 2</option>
                                 <option value="3">ห้อง 3</option>

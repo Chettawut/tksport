@@ -2,9 +2,10 @@
 	header('Content-Type: application/json');
 	include('../backend/conn.php');
 
-	$sql = "SELECT percode,firstname,lastname,titlename,type ";
-	$sql .= "FROM person  ";   
-    $sql .= " where colorcode = '3'  ";   
+	$sql = "SELECT percode,firstname,lastname,titlename,count(actcode) as count from ( ";
+	$sql .= "SELECT a.percode,a.firstname,a.lastname,a.titlename,b.actcode FROM person as a left outer join activity as b on(a.percode=b.percode) ";   
+    $sql .= "where colorcode = '3' ) as c ";   
+	$sql .= "GROUP by percode ORDER by count desc ";   
 
 	$query = mysqli_query($conn,$sql);
 
@@ -15,7 +16,7 @@
 		"firstname" => array(),
 		"lastname" => array(),
 		"titlename" => array(),
-		"type" => array()
+		"count" => array()
 		
 		);
 		
@@ -24,7 +25,7 @@
 			array_push($json_result['firstname'],$row["firstname"]);
 			array_push($json_result['lastname'],$row["lastname"]);
 			array_push($json_result['titlename'],$row["titlename"]);
-			array_push($json_result['type'],$row["type"]);
+			array_push($json_result['count'],$row["count"]);
 			
         }
         echo json_encode($json_result);

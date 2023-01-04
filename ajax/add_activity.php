@@ -5,7 +5,7 @@
 
     $StrSQL = "INSERT INTO activity ( `percode`,`sptcode`,`jobcode`,`actdetail`,`status`) ";
     $StrSQL .= "VALUES (";
-    $StrSQL .= "'".$_POST["add_percode"]."','".$_POST["add_sptcode"]."','".$_POST["add_jobcode"]."','".$_POST["add_actdetail"]."','01' ";    
+    $StrSQL .= "'".$_POST["act_percode"]."','".$_POST["add_sptcode"]."','".$_POST["add_jobcode"]."','".$_POST["add_actdetail"]."','N' ";    
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
     

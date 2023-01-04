@@ -19,6 +19,32 @@ $("#add_jobcode").change(function() {
     }
 });
 
+$('#modal_joblist').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var recipient = button.data('whatever') 
+  var modal = $(this)
+  
+  $("#tableJoblist tbody").empty();
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/getsup_joblist.php",
+        data: "idcode=" + recipient,
+        success: function(result) {
+            
+            for (count = 0; count < result.actcode.length; count++) {
+                $('#tableJoblist').append(
+                    '<tr><td style="text-align:center">' + result.titlename[count] + ' ' +
+                    result
+                    .firstname[count] + ' ' + result.lastname[count] +
+                    '</td><td  style="text-align:center">' + result.jobname[count] +
+                    '</td></tr>');
+            }
+        }
+    });
+})
+
+
 //เพิ่ม Person
 $("#frmRegister").submit(function(e) {
     e.preventDefault();
@@ -73,13 +99,12 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableRed').append(
-                '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
-                .percode[
-                    count] + '" data-whatever="' + result.percode[
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
-                '</td><td  style="text-align:center">0</td></tr>');
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
         }
     }
 });
@@ -92,13 +117,14 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableBlue').append(
-                '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
                 .percode[
                     count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
-                '</td><td  style="text-align:center">0</td></tr>');
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
         }
     }
 });
@@ -111,13 +137,14 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableGreen').append(
-                '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
                 .percode[
                     count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
-                '</td><td  style="text-align:center">0</td></tr>');
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
         }
     }
 });
@@ -130,13 +157,14 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableYellow').append(
-                '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
                 .percode[
                     count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
-                '</td><td  style="text-align:center">0</td></tr>');
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
         }
     }
 });

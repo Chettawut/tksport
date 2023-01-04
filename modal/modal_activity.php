@@ -44,7 +44,7 @@
                             </select>
                         </div>
                     </div>
-                <input type="hidden" name="add_percode" id="add_percode" value="<?php echo $_SESSION['percode'];?>">
+                <input type="hidden" name="act_percode" id="act_percode" value="<?php echo $_SESSION['percode'];?>">
 
                 </div>
                 <div class="modal-footer">

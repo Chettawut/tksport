@@ -12,10 +12,12 @@ include_once('backend/conn.php');
     <title>Home</title>
 
 
-
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" >
     <link rel="stylesheet" href="css/stu_make.css">    
     <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
+    <?php include_once('css.php');?>
 </head>
 
 <body>
@@ -38,13 +40,13 @@ include_once('backend/conn.php');
     <header class="p-3 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <img src="http://www.thaischool.in.th/_files_school/23100163/data/23100163_0_20210413-133844.png"
                         alt="" width="100" height="80">
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.html" class="nav-link px-2 text-white">Home</a></li>
+                    <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
                     <li><a href="#" class="nav-link px-2 text-white" onclick="show()">ข้อมูลการแข่งขัน</a>
                         <div class="dropdown-hidden" id="dropdown">
                             <ul
@@ -107,7 +109,6 @@ include_once('backend/conn.php');
     </header>
 
     <div class="content">
-
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
@@ -191,7 +192,7 @@ include_once('backend/conn.php');
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-red" role="tabpanel"
                         aria-labelledby="pills-red-tab">
-                        <table name="tableRed" id="tableRed" class="table table-bordered table-striped">
+                        <table name="tableRed" id="tableRed" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
                                     <th width="20%" style="text-align:center">รหัสประจำตัว</th>
@@ -205,7 +206,7 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-blue" role="tabpanel" aria-labelledby="pills-blue-tab">
-                        <table name="tableBlue" id="tableBlue" class="table table-bordered table-striped">
+                        <table name="tableBlue" id="tableBlue" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
                                     <th width="20%" style="text-align:center">รหัสประจำตัว</th>
@@ -219,7 +220,7 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-green" role="tabpanel" aria-labelledby="pills-green-tab">
-                        <table name="tableGreen" id="tableGreen" class="table table-bordered table-striped">
+                        <table name="tableGreen" id="tableGreen" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
                                     <th width="20%" style="text-align:center">รหัสประจำตัว</th>
@@ -233,7 +234,7 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-yellow" role="tabpanel" aria-labelledby="pills-yellow-tab">
-                        <table name="tableYellow" id="tableYellow" class="table table-bordered table-striped">
+                        <table name="tableYellow" id="tableYellow" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
                                     <th width="20%" style="text-align:center">รหัสประจำตัว</th>
@@ -265,8 +266,8 @@ include_once('backend/conn.php');
                 </div>
             </div>
         </footer>
-
-        <?php include_once('modal/modal_activity.php');?>
+        <?php include_once('modal/modal_joblist.php');?>
+        <?php include_once('modal/modal_activity.php');?>        
         <?php include_once('modal/modal_login.php');?>
         <?php include_once('modal/modal_register.php');?>
         
@@ -277,12 +278,9 @@ include_once('backend/conn.php');
             <script src="js/bootstrap.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-            
+                crossorigin="anonymous"></script>            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
             
             <?php include_once('js.php');?>
 </body>
