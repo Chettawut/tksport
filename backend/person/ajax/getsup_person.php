@@ -11,6 +11,7 @@
 		"password" => array(),
 		"firstname" => array(),
 		"lastname" => array(),
+		"titlename" => array(),
 		"type" => array(),
 		"level" => array(),
 		"room" => array(),
@@ -26,6 +27,7 @@
 			array_push($json_result['password'],$row["password"]);
 			array_push($json_result['firstname'],$row["firstname"]);
 			array_push($json_result['lastname'],$row["lastname"]);
+			array_push($json_result['titlename'],$row["titlename"]);
 			array_push($json_result['type'],$row["type"]);
 			array_push($json_result['level'],$row["level"]);
 			array_push($json_result['room'],$row["room"]);

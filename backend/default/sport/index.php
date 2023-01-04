@@ -106,7 +106,6 @@
             </section>
         </div>
 
-
         <?php include_once('modal/modal_add.php');?>
         <?php include_once('modal/modal_edit.php');?>
         <?php include_once('modal/modal_addtype.php');?>

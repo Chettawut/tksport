@@ -96,7 +96,63 @@
   color: #000;
 } */
 
-/* -------------------------------------------------------- header end -------------------------------------------------------- */
+
+
+.space-t-32 {
+  margin-top: 32px;
+}
+
+.search {
+  margin: 16px 16px 0 0;
+}
+
+.space-t-0 {
+  margin-top: 0;
+}
+
+.space-b-32 {
+  margin-bottom: 32px;
+}
+
+.space-t-64 {
+  margin-top: 64px;
+}
+
+.space-b-64 {
+  margin-bottom: 64px;
+}
+
+
+.FillUser {
+  width: 150px;
+  border: none;
+  border-bottom: 1px solid #333;
+
+}
+
+.change {
+  color: #fff;
+  background-color: #FF914D;
+  border: none;
+}
+.change:hover {
+  color: #fff;
+  background-color: #ffa600;
+}
+
+.SignUp {
+  background-color: #FF914D;
+  border: #fff;
+  color: #fff;
+  padding:6px 12px;
+  border-radius: 5px;
+  
+}
+
+/* -------------------------------------------------------- all func  -------------------------------------------------------- */
+
+
+
 
 .icon-change:hover{
   filter: invert(1);
@@ -108,11 +164,6 @@
   background-color: #FF914D;
   border: none;
 }
-
-.search {
-  margin: 16px 16px 0 0;
-}
-
 
 
 .modal-title {
@@ -131,30 +182,11 @@
 }
 
 
-
 form {
   text-align: center;
   
 }
 
-.container-seclect {
-  margin-top: 64px;
-}
-
-.FillUser {
-  border: none;
-  border-bottom: 1px solid #333;
-  margin-top: 2rem;
-
-}
-
-.name {
-  margin-top: 0;
-}
-
-.space {
-  margin-bottom: 32px;
-}
 
 .modal-footer {
   margin-top: 32px;
@@ -170,24 +202,8 @@ form {
   background-color: #FF914D;
 }
 
-.change {
-  color: #fff;
-  background-color: #FF914D;
-}
-.change:hover {
-  color: #fff;
-  background-color: #ffa600;
-}
 
 
-.SignUp {
-  background-color: #FF914D;
-  border: #fff;
-  color: #fff;
-  padding:6px 12px;
-  border-radius: 5px;
-  
-}
 /* -------------------------------------------------------- login end -------------------------------------------------------- */
 
 .form {
@@ -196,12 +212,13 @@ form {
 
 
 .form-size {
-  width: 180px;
+  width: 100px;
   border: none;
   border-bottom: 1px solid #333;
   background-color: #fff;
   color: #888;
 }
+
 .form-size2 {
   width: 100px;
   border: none;
@@ -210,29 +227,86 @@ form {
   color: #888;
 }
 
-.FillID {
-  width: 100px;
-  border: none;
-  border-bottom: 1px solid #333;
-  /* margin-top: 2rem; */
-}
 
-
-.row-top {
-  margin-top: 32px;
-}
 /* -------------------------------------------------------- sign up end -------------------------------------------------------- */
 
+/* -------------------------------------------------------- header end -------------------------------------------------------- */
 
+
+.all-card {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin: 40px;
+  
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  justify-self: center;
+  border-radius: 15px;
+}
+
+body .all-card .card:nth-child(1)  {
+  background: #2196f3;
+}
+
+body .all-card .card:nth-child(2)  {
+  background: #e91e63;
+}
+
+body .all-card .card:nth-child(3)  {
+  background: #23c186;
+}
+
+body .all-card .card:nth-child(4)  {
+  background: #f4bc54;
+}
+
+
+/* -------------------------------------------------------- content end -------------------------------------------------------- */
+footer{
+  position:relative;
+  bottom:0;
+  width:100%;
+  /* z-index: -100; */
+}
+
+/* -------------------------------------------------------- footer end -------------------------------------------------------- */
+
+
+@media only screen and (max-width: 1330px) {
+  .card{
+    width: 250px;
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  
+  .all-card{
+    grid-template-columns: repeat(2,1fr);
+    
+  }
+  
+  .card{
+    margin: 20px;
+  }
+}
 @media only screen and (min-width: 992px) {
   .search {
     margin: 0 16px 0 0;
   }
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
 
-  .name {
-    margin-top: 32px;
+  .card {
+    width: 150px;
+    height: 180px;
+  }
+
+
+  .FillUser{
+    width: 180px;
   }
   
   .row-sm {
@@ -244,6 +318,14 @@ form {
     grid-template-columns: 1fr;
   }
 
+  .form-size {
+    width: 180px;
+    border: none;
+    border-bottom: 1px solid #333;
+    background-color: #fff;
+    color: #888;
+  }
+
   .form-size2 {
     width: 180px;
     border: none;
@@ -251,11 +333,17 @@ form {
     background-color: #fff;
     color: #888;
   }
-  
-  .FillID {
-    width: 180px;
-    border: none;
-    border-bottom: 1px solid #333;
-    /* margin-top: 2rem; */
+  @media only screen and (max-width: 470px) {
+    .card {
+      width: 100px;
+      height: 120px;
+    }
   }
+  @media only screen and (max-width: 370px) {
+    .card {
+      width: 80px;
+      height: 100px;
+    }
+  }
+  
 }

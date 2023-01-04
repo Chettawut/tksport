@@ -2,7 +2,7 @@
 	header('Content-Type: application/json');
 	include('../../../conn.php');
 	
-	$strSQL = "SELECT * FROM sport_type  where sptcode = '".$_POST['idcode']."'";
+	$strSQL = "SELECT * FROM sport_type  where spcode = '".$_POST['idcode']."'";
 	$query = mysqli_query($conn,$strSQL);
 	
 	$json_result=array(

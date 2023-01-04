@@ -21,7 +21,7 @@
                             <select class="form-control" name="add_type" id="add_type" required>
                                 <option value="นักเรียน">นักเรียน</option>
                                 <option value="คุณครู">คุณครู</option>
-                                <option value="admin">Admin</option>
+                                <option value="Admin">Admin</option>
                             </select>
                         </div>
                     </div>
@@ -43,6 +43,9 @@
                                 <option value="นาย">นาย</option>
                                 <option value="นาง">นาง</option>
                                 <option value="นางสาว">นางสาว</option>
+                                <option value="ด.ช.">ด.ช.</option>
+                                <option value="ด.ญ.">ด.ญ.</option>
+                                <option value="ครู">ครู</option>
                             </select>
                         </div>
                         <div class="form-group col-lg-5 col-12">
@@ -75,6 +78,7 @@
                                                 echo '<option value="'.$row["colorcode"].'">'.$row["colorname"].'</option>';
                                             }
                                     ?>
+                                    <option value="">ไม่มีสี</option>
                             </select>
                         </div>
                     </div>

@@ -42,9 +42,13 @@
                         class="table table-bordered table-striped">
                         <thead style="background-color:#D6EAF8;">
                             <tr>
-                                <th style="width:20%;text-align:center">ลำดับ</th>
-                                <th style="width:50%;text-align:center">ระดับชั้น</th>
-                                <th style="width:30%;text-align:center">เพศ</th>
+                                <th style="width:10%;text-align:center">ลำดับ</th>
+                                <th style="width:15%;text-align:center">ระดับชั้น</th>
+                                <th style="width:15%;text-align:center">เพศ</th>
+                                <th style="width:15%;text-align:center">คะแนนอันดับ 1</th>
+                                <th style="width:15%;text-align:center">คะแนนอันดับ 2</th>
+                                <th style="width:15%;text-align:center">คะแนนอันดับ 3</th>
+                                <th style="width:15%;text-align:center">คะแนนอันดับ 4</th>
                             </tr>
                         </thead>
                         <tbody>

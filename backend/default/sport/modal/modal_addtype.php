@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">แก้ไขประเภทนักกีฬา</h5>
+                <h5 class="modal-title">เพิ่ม ประเภทนักกีฬา</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

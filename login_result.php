@@ -28,23 +28,29 @@ if ($stmt->num_rows > 0) {
 			
 					
 			
-			if($type=='admin')
+			if($type=='Admin')
 			$_SESSION['type'] = 'Admin';
 			else if($type=='นักเรียน')
 			$_SESSION['type'] = 'นักเรียน';
 			else if($type=='คุณครู')
 			$_SESSION['type'] = 'คุณครู';
 			
-			
+			if($type=='Admin')
 			header( "Location: backend");
-		
+			else
+			{
+				header( "Location: ..");
+				// header( "Location: ..");
+			}
 	} else {
 		echo 'Incorrect password!';
-		header( "Location: ..?log=password");
+		// header( "Location: ..?log=password");
+		header( "Location: index.php?log=password");
 	}
 } else {
 	echo 'Incorrect username!';
-	header( "Location: ..?log=username");
+	// header( "Location: ..?log=username");
+	header( "Location: index.php?log=username");
 }
 
 

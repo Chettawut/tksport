@@ -47,6 +47,29 @@ $(function() {
 
 })
 
+$('#modal_edittype').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget);
+    var recipient = button.data('whatever');
+    var modal = $(this);
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/getsup_type.php",
+        data: "idcode=" + recipient,
+        success: function(result) {
+            
+            modal.find('.modal-body #sptcode').val(result.sptcode);
+            modal.find('.modal-body #level').val(result.level);
+            modal.find('.modal-body #gender').val(result.gender);
+            modal.find('.modal-body #score1').val(result.score1);
+            modal.find('.modal-body #score2').val(result.score2);
+            modal.find('.modal-body #score3').val(result.score3);
+            modal.find('.modal-body #score4').val(result.score4);
+
+
+        }
+    });
+});
 
 $('#modal_edit').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget);
@@ -66,7 +89,7 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_type.php",
+        url: "ajax/get_type.php",
         data: "idcode=" + recipient,
         success: function(result) {
             for (count = 0; count < result.level.length; count++) {
@@ -75,9 +98,14 @@ $('#modal_edit').on('show.bs.modal', function(event) {
                     '<tr data-toggle="modal" data-target="#modal_edittype" id="' + result
                     .sptcode[
                         count] + '" data-whatever="' + result.sptcode[
-                        count] + '"><td style="text-align:center">' + (count+1) +
+                        count] + '"><td style="text-align:center">' + (count + 1) +
                     '</td><td  style="text-align:center">' + result.level[count] +
-                    '</td><td  style="text-align:center">' + result.gender[count] + '</td></tr>');
+                    '</td><td  style="text-align:center">' + result.gender[count] +
+                    '</td><td  style="text-align:center">' + result.score1[count] +
+                    '</td><td  style="text-align:center">' + result.score2[count] +
+                    '</td><td  style="text-align:center">' + result.score3[count] +
+                    '</td><td  style="text-align:center">' + result.score4[count] + '</td></tr>'
+                    );
             }
 
 
@@ -130,6 +158,28 @@ $("#frmAddSport").submit(function(e) {
         }
     });
 
+
+});
+
+$("#frmEditType").submit(function(e) {
+    e.preventDefault();
+    $(':disabled').each(function(e) {
+        $(this).removeAttr('disabled');
+    })
+    $.ajax({
+        type: "POST",
+        url: "ajax/edit_type.php",
+        data: $("#frmEditType").serialize(),
+        success: function(result) {
+
+            if (result.status == 1) // Success
+            {
+                alert(result.message);
+                window.location.reload();
+                // console.log(result.message);
+            }
+        }
+    });
 
 });
 

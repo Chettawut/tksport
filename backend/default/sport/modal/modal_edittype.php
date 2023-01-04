@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เพิ่ม ประเภทนักกีฬา</h5>
+                <h5 class="modal-title">แก้ไขประเภทนักกีฬา</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -46,14 +46,14 @@
                             <input type="number" class="form-control" name="score4" id="score4" required>
                         </div>
                     </div>
+                    <input type="hidden" id="sptcode" name="sptcode">
                 </div>
                 <div class="modal-footer">
                     <div class="col text-center">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        <button type="submit" id="btnEditType" form="frmEditType" class="btn btn-primary">เพิ่ม</button>
+                        <button type="submit" id="btnEditType" form="frmEditType" class="btn btn-primary">แก้ไข</button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>

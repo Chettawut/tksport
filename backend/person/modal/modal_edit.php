@@ -21,7 +21,7 @@
                             <select class="form-control" name="type" id="type" required>
                                 <option value="นักเรียน">นักเรียน</option>
                                 <option value="คุณครู">คุณครู</option>
-                                <option value="admin">Admin</option>
+                                <option value="Admin">Admin</option>
                             </select>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="form-group col-lg-2 col-12">
                             <label class="col-form-label">รีเซ็ต Password</label>
                             <button type="button" class="btn btn-secondary form-control" data-toggle="modal"
-                                            data-target="#modal_reset" data-dismiss="modal">Reset</button>
+                                data-target="#modal_reset" data-dismiss="modal">Reset</button>
                         </div>
                     </div>
                     <hr>
@@ -48,6 +48,9 @@
                                 <option value="นาย">นาย</option>
                                 <option value="นาง">นาง</option>
                                 <option value="นางสาว">นางสาว</option>
+                                <option value="ด.ช.">ด.ช.</option>
+                                <option value="ด.ญ.">ด.ญ.</option>
+                                <option value="ครู">ครู</option>
                             </select>
                         </div>
                         <div class="form-group col-lg-5 col-12">
@@ -62,16 +65,33 @@
                     <div class="row">
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ระดับชั้น</label>
-                            <input type="text" class="form-control" name="level" id="level" >
+                            <select class="form-control" name="level" id="level" required>
+                                <option value="1">ม.1</option>
+                                <option value="2">ม.2</option>
+                                <option value="3">ม.3</option>
+                                <option value="4">ม.4</option>
+                                <option value="5">ม.5</option>
+                                <option value="6">ม.6</option>
+                            </select>
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">ห้อง</label>
-                            <input type="text" class="form-control" name="room" id="room" >
+                            <select class="form-control" name="room" id="room" required>
+                                <option value="1">ห้อง 1</option>
+                                <option value="2">ห้อง 2</option>
+                                <option value="3">ห้อง 3</option>
+                                <option value="4">ห้อง 4</option>
+                                <option value="5">ห้อง 5</option>
+                                <option value="6">ห้อง 6</option>
+                                <option value="7">ห้อง 7</option>
+                                <option value="8">ห้อง 8</option>
+                                <option value="9">ห้อง 9</option>
+                            </select>
                         </div>
                         <div class="form-group col-lg-4 col-12">
                             <label class="col-form-label">สีที่อยู่</label>
                             <select class="form-control" name="colorcode" id="colorcode" required>
-                                    <?php 
+                                <?php 
                                             include('../conn.php');
                                         	$sql = "SELECT * FROM `color`  ";
                                             $query = mysqli_query($conn,$sql);
@@ -80,17 +100,18 @@
                                                 echo '<option value="'.$row["colorcode"].'">'.$row["colorname"].'</option>';
                                             }
                                     ?>
-                                </select>
+                                <option value="">ไม่มีสี</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">กลุ่มสาระ</label>
-                            <input type="text" class="form-control" name="pergroup" id="pergroup" >
+                            <input type="text" class="form-control" name="pergroup" id="pergroup">
                         </div>
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">เบอร์โทรศัพท์</label>
-                            <input type="text" class="form-control" name="telephone" id="telephone" >
+                            <input type="text" class="form-control" name="telephone" id="telephone">
                         </div>
                     </div>
                 </div>

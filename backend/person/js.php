@@ -55,6 +55,7 @@ $('#modal_edit').on('show.bs.modal', function(event) {
             modal.find('.modal-body #password').val(result.password);            
             modal.find('.modal-body #firstname').val(result.firstname);
             modal.find('.modal-body #lastname').val(result.lastname);
+            modal.find('.modal-body #titlename').val(result.titlename);            
             modal.find('.modal-body #type').val(result.type);
             modal.find('.modal-body #level').val(result.level);
             modal.find('.modal-body #room').val(result.room);
