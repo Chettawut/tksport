@@ -8,7 +8,7 @@
 	$sql .= "LEFT OUTER JOIN sport_type as c on (a.sptcode = c.sptcode)  ";   
 	$sql .= "LEFT OUTER JOIN sport as d on (c.spcode = d.spcode)  ";   
 	$sql .= "inner join job as e on (a.jobcode = e.jobcode)  ";  
-	$sql .= "where a.status = 'N'  ";   
+	$sql .= "where a.status = 'N' and b.colorcode = '".$_POST["colorcode"]."' ";   
 
 	$query = mysqli_query($conn,$sql);
 

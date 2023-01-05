@@ -1,10 +1,11 @@
 <script type="text/javascript">
 $(function() {
 
-
+    
     $.ajax({
         type: "POST",
         url: "ajax/get_activity.php",
+        data: "colorcode=" + $('#colorcode').val(),
         success: function(result) {
 
             for (count = 0; count < result.actcode.length; count++) {

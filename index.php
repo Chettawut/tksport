@@ -54,7 +54,6 @@ include_once('backend/conn.php');
                                 class="dropdown-menu dropdown-menu-dark d-grid gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
                                 <li><a class="dropdown-item rounded-2" href="#">ตารางการแข่ง</a></li>
                                 <li><a class="dropdown-item rounded-2" href="#">กำหนดการกีฬาสี</a></li>
-                                <li><a class="dropdown-item rounded-2" href="#">Something else here</a></li>
                             </ul>
                         </div>
                     </li>
@@ -63,7 +62,10 @@ include_once('backend/conn.php');
                     if(isset($_SESSION['checklogin']))
                     {
                             if($_SESSION['type']=='Admin')
-                            echo '<li><a href="backend" class="btn btn-primary" style="background-color: #008CBA;">กลับหลังบ้าน &nbsp;<i class="fa fa-arrow-right"></i></a></li>';
+                            {
+                                echo '<li><a href="backend/approve" class="btn btn-primary" style="background-color: #008CBA;">กลับไปอนุมัติ &nbsp;<i class="fa fa-arrow-right"></i></a></li>';
+                                echo '<li><a href="backend" class="btn btn-primary" style="background-color: #008CBA;">กลับหลังบ้าน &nbsp;<i class="fa fa-arrow-right"></i></a></li>';
+                            }                            
                             else if($_SESSION['type']=='AdminColor')
                             echo '<li><a href="backend/approve" class="btn btn-primary" style="background-color: #008CBA;">กลับไปอนุมัติ &nbsp;<i class="fa fa-arrow-right"></i></a></li>';
                         
@@ -120,6 +122,8 @@ include_once('backend/conn.php');
                     role="tab" aria-controls="nav-studentlist" aria-selected="false">รายชื่อนักเรียน</a>
                 <a class="nav-item nav-link" id="nav-teacherlist-tab" data-toggle="tab" href="#nav-teacherlist"
                     role="tab" aria-controls="nav-teacherlist" aria-selected="false">รายชื่อคุณครู</a>
+                <a class="nav-item nav-link" id="nav-sportlist-tab" data-toggle="tab" href="#nav-sportlist" role="tab"
+                    aria-controls="nav-sportlist" aria-selected="false">กีฬาที่จัดแข่ง</a>
             </div>
         </nav>
 
@@ -279,7 +283,7 @@ include_once('backend/conn.php');
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-red-tc" role="tabpanel"
                         aria-labelledby="pills-red-tab">
-                        <table name="tableRed" id="tableRedTC" class="table table-bordered table-striped table-hover">
+                        <table name="tableRedTC" id="tableRedTC" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
                                     <th width="20%" style="text-align:center">รหัสประจำตัว</th>
@@ -293,7 +297,7 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-blue-tc" role="tabpanel" aria-labelledby="pills-blue-tab">
-                        <table name="tableBlue" id="tableBlueTC" class="table table-bordered table-striped table-hover">
+                        <table name="tableBlueTC" id="tableBlueTC" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
                                     <th width="20%" style="text-align:center">รหัสประจำตัว</th>
@@ -307,7 +311,7 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-green-tc" role="tabpanel" aria-labelledby="pills-green-tab">
-                        <table name="tableGreen" id="tableGreenTC"
+                        <table name="tableGreenTC" id="tableGreenTC"
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
@@ -322,7 +326,7 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-yellow-tc" role="tabpanel" aria-labelledby="pills-yellow-tab">
-                        <table name="tableYellow" id="tableYellowTC"
+                        <table name="tableYellowTC" id="tableYellowTC"
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
@@ -339,41 +343,57 @@ include_once('backend/conn.php');
                 </div>
 
             </div>
-        </div>
+            <div class="tab-pane fade" id="nav-sportlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">
+                <br>
+                <table name="tablesport" id="tablesport" class="table table-bordered table-striped table-hover">
+                    <thead style=" background-color:#D6EAF8;">
+                        <tr>
+                            <th width="40%" style="text-align:center">ชื่อกีฬา</th>
+                            <th width="30%" style="text-align:center">ระดับชั้น</th>
+                            <th width="30%" style="text-align:center">เพศ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-        <footer class=" p-5  text-bg-dark">
-            <div class="text-center">
-                <div>
-                    <span><img class="space-b-32"
-                            src="http://www.thaischool.in.th/_files_school/23100163/data/23100163_0_20210413-133844.png"
-                            alt="" width="150" height="120"></span>
-                    <p>โรงเรียนตราษตระการคุณ <br> 494 หมู่ 8 ถนนเนินตาแมว ตำบลวังกระแจะ อำเภอเมืองตราด <br> จังหวัดตราด
-                        23000</p>
-                </div>
-                <div class="copyright ">
-                    <p class="space-t-32">Copyright © 2022 Trattrakrankhun school </p>
-                </div>
+                    </tbody>
+                </table>
             </div>
-        </footer>
-        <?php include_once('modal/modal_joblist.php');?>
-        <?php include_once('modal/modal_activity.php');?>
-        <?php include_once('modal/modal_login.php');?>
-        <?php include_once('modal/modal_register.php');?>
+        </div>
+    </div>
+
+    <footer class=" p-5  text-bg-dark">
+        <div class="text-center">
+            <div>
+                <span><img class="space-b-32"
+                        src="http://www.thaischool.in.th/_files_school/23100163/data/23100163_0_20210413-133844.png"
+                        alt="" width="150" height="120"></span>
+                <p>โรงเรียนตราษตระการคุณ <br> 494 หมู่ 8 ถนนเนินตาแมว ตำบลวังกระแจะ อำเภอเมืองตราด <br> จังหวัดตราด
+                    23000</p>
+            </div>
+            <div class="copyright ">
+                <p class="space-t-32">Copyright © 2022 Trattrakrankhun school </p>
+            </div>
+        </div>
+    </footer>
+    <?php include_once('modal/modal_joblist.php');?>
+    <?php include_once('modal/modal_activity.php');?>
+    <?php include_once('modal/modal_login.php');?>
+    <?php include_once('modal/modal_register.php');?>
 
 
 
 
-        <script src="js/stu_make.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    <script src="js/stu_make.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
-        <?php include_once('js.php');?>
+    <?php include_once('js.php');?>
 </body>
 
 </html>

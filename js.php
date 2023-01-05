@@ -83,12 +83,28 @@ $("#frmAddActivity").submit(function(e) {
                 window.location.reload();
                 // console.log(result.message);
             } else {
-                alert('รหัสนักเรียนซ้ำ');
+                alert('รหัสกิจกรรมซ้ำ');
             }
         }
     });
 
 
+});
+
+$.ajax({
+    type: "POST",
+    url: "ajax/get_sport.php",
+    success: function(result) {
+
+        for (count = 0; count < result.spcode.length; count++) {
+
+            $('#tablesport').append(
+                '<tr data-toggle="modal" data-target="#modal_sport" data-whatever="' + result.spcode[
+                    count] + '"><td style="text-align:center">' + result.spname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '</td><td  style="text-align:center">' + result.gender[count] +
+                '</td></tr>');
+        }
+    }
 });
 
 $.ajax({
