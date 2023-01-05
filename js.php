@@ -93,7 +93,7 @@ $("#frmAddActivity").submit(function(e) {
 
 $.ajax({
     type: "POST",
-    url: "ajax/get_listred.php",
+    url: "ajax/get_stulistred.php",
     success: function(result) {
 
         for (count = 0; count < result.percode.length; count++) {
@@ -111,7 +111,7 @@ $.ajax({
 
 $.ajax({
     type: "POST",
-    url: "ajax/get_listblue.php",
+    url: "ajax/get_stulistblue.php",
     success: function(result) {
 
         for (count = 0; count < result.percode.length; count++) {
@@ -131,7 +131,7 @@ $.ajax({
 
 $.ajax({
     type: "POST",
-    url: "ajax/get_listgreen.php",
+    url: "ajax/get_stulistgreen.php",
     success: function(result) {
 
         for (count = 0; count < result.percode.length; count++) {
@@ -151,12 +151,90 @@ $.ajax({
 
 $.ajax({
     type: "POST",
-    url: "ajax/get_listyellow.php",
+    url: "ajax/get_stulistyellow.php",
     success: function(result) {
 
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableYellow').append(
+                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                .percode[
+                    count] + '" data-whatever="' + result.percode[
+                    count] + '"><td style="text-align:center">' + result.percode[count] +
+                '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
+                .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$.ajax({
+    type: "POST",
+    url: "ajax/get_tclistred.php",
+    success: function(result) {
+
+        for (count = 0; count < result.percode.length; count++) {
+
+            $('#tableRedTC').append(
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result.percode[
+                    count] + '"><td style="text-align:center">' + result.percode[count] +
+                '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
+                .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$.ajax({
+    type: "POST",
+    url: "ajax/get_tclistblue.php",
+    success: function(result) {
+
+        for (count = 0; count < result.percode.length; count++) {
+
+            $('#tableBlueTC').append(
+                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                .percode[
+                    count] + '" data-whatever="' + result.percode[
+                    count] + '"><td style="text-align:center">' + result.percode[count] +
+                '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
+                .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$.ajax({
+    type: "POST",
+    url: "ajax/get_tclistgreen.php",
+    success: function(result) {
+
+        for (count = 0; count < result.percode.length; count++) {
+
+            $('#tableGreenTC').append(
+                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                .percode[
+                    count] + '" data-whatever="' + result.percode[
+                    count] + '"><td style="text-align:center">' + result.percode[count] +
+                '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
+                .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.count[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$.ajax({
+    type: "POST",
+    url: "ajax/get_tclistyellow.php",
+    success: function(result) {
+
+        for (count = 0; count < result.percode.length; count++) {
+
+            $('#tableYellowTC').append(
                 '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
                 .percode[
                     count] + '" data-whatever="' + result.percode[

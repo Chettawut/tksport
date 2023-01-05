@@ -16,6 +16,10 @@
                             <select class="form-control" name="add_level" id="add_level" required>
                                 <option value="ม.ต้น">ม.ต้น</option>
                                 <option value="ม.ปลาย">ม.ปลาย</option>
+                                <option value="ม.1-2">ม.1-2</option>
+                                <option value="ม.3-4">ม.3-4</option>
+                                <option value="ม.5-6">ม.5-6</option>
+                                <option value="ม.ปลาย และมีม.ต้น 5 คน">ม.ปลาย และมีม.ต้น 5 คน</option>
                                 <option value="รวม">รวม</option>
                             </select>
                         </div>

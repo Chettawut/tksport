@@ -12,11 +12,12 @@ include_once('backend/conn.php');
     <title>Home</title>
 
 
-    
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" >
-    <link rel="stylesheet" href="css/stu_make.css">    
-    <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T">
+    <link rel="stylesheet" href="css/stu_make.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <?php include_once('css.php');?>
 </head>
 
@@ -62,7 +63,9 @@ include_once('backend/conn.php');
                     if(isset($_SESSION['checklogin']))
                     {
                             if($_SESSION['type']=='Admin')
-                            echo '<li><a href="backend" class="btn btn-primary" style="background-color: #008CBA;">Back Page</a></li>';
+                            echo '<li><a href="backend" class="btn btn-primary" style="background-color: #008CBA;">กลับหลังบ้าน &nbsp;<i class="fa fa-arrow-right"></i></a></li>';
+                            else if($_SESSION['type']=='AdminColor')
+                            echo '<li><a href="backend/approve" class="btn btn-primary" style="background-color: #008CBA;">กลับไปอนุมัติ &nbsp;<i class="fa fa-arrow-right"></i></a></li>';
                         
                     }
 
@@ -70,9 +73,9 @@ include_once('backend/conn.php');
                     <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
               <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
                 </ul>
-                
 
-                
+
+
                 <?php
 
                 if (!isset($_SESSION['checklogin'])) 
@@ -81,7 +84,7 @@ include_once('backend/conn.php');
                 <form class="col-7 col-lg-auto mb-3 mb-lg-0 me-lg-3 search" role="search">
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
                         aria-label="Search">
-                </form>                
+                </form>
                 <div class="text-end relative icon pointer ">
                     <button type="button" class="btn btn-outline-light me-2 " data-bs-toggle="modal"
                         data-bs-target="#exampleModalToggle"><img class="icon-change"
@@ -93,14 +96,14 @@ include_once('backend/conn.php');
                   }
                 else
                    {                    
-                    ?>                
-                    <h4 style="margin-right:20px;">
-                      <?php echo $_SESSION['titlename'].' '.$_SESSION['firstname'].' '.$_SESSION['lastname'];?>
-                    </h4>
+                    ?>
+                <h4 style="margin-right:20px;">
+                    <?php echo $_SESSION['titlename'].' '.$_SESSION['firstname'].' '.$_SESSION['lastname'];?>
+                </h4>
                 <button type="button" class="btn btn-outline-light me-2 " data-bs-toggle="modal"
-                        data-bs-target="#modal_activity"><i class="fas fa-edit"></i> เพิ่มกิจกรรมที่ทำ
-                    </button>
-                    <a href="logout.php" class="btn btn-outline-light me-2">Logout</a>
+                    data-bs-target="#modal_activity"><i class="fas fa-edit"></i> เพิ่มกิจกรรมที่ทำ
+                </button>
+                <a href="logout.php" class="btn btn-outline-light me-2">Logout</a>
                 <?php
                     }
                     ?>
@@ -115,6 +118,8 @@ include_once('backend/conn.php');
                     aria-controls="nav-home" aria-selected="true">หน้าข่าวสาร</a>
                 <a class="nav-item nav-link" id="nav-studentlist-tab" data-toggle="tab" href="#nav-studentlist"
                     role="tab" aria-controls="nav-studentlist" aria-selected="false">รายชื่อนักเรียน</a>
+                <a class="nav-item nav-link" id="nav-teacherlist-tab" data-toggle="tab" href="#nav-teacherlist"
+                    role="tab" aria-controls="nav-teacherlist" aria-selected="false">รายชื่อคุณครู</a>
             </div>
         </nav>
 
@@ -234,7 +239,91 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-yellow" role="tabpanel" aria-labelledby="pills-yellow-tab">
-                        <table name="tableYellow" id="tableYellow" class="table table-bordered table-striped table-hover">
+                        <table name="tableYellow" id="tableYellow"
+                            class="table table-bordered table-striped table-hover">
+                            <thead style=" background-color:#D6EAF8;">
+                                <tr>
+                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="nav-teacherlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">
+                <br>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-red-tab" data-toggle="pill" href="#pills-red-tc" role="tab"
+                            aria-controls="pills-red" aria-selected="true">สีแดง</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-blue-tab" data-toggle="pill" href="#pills-blue-tc" role="tab"
+                            aria-controls="pills-blue" aria-selected="false">สีฟ้า</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-green-tab" data-toggle="pill" href="#pills-green-tc" role="tab"
+                            aria-controls="pills-green" aria-selected="false">สีเขียว</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-yellow-tab" data-toggle="pill" href="#pills-yellow-tc" role="tab"
+                            aria-controls="pills-yellow" aria-selected="false">สีเหลือง</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-red-tc" role="tabpanel"
+                        aria-labelledby="pills-red-tab">
+                        <table name="tableRed" id="tableRedTC" class="table table-bordered table-striped table-hover">
+                            <thead style=" background-color:#D6EAF8;">
+                                <tr>
+                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="pills-blue-tc" role="tabpanel" aria-labelledby="pills-blue-tab">
+                        <table name="tableBlue" id="tableBlueTC" class="table table-bordered table-striped table-hover">
+                            <thead style=" background-color:#D6EAF8;">
+                                <tr>
+                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="pills-green-tc" role="tabpanel" aria-labelledby="pills-green-tab">
+                        <table name="tableGreen" id="tableGreenTC"
+                            class="table table-bordered table-striped table-hover">
+                            <thead style=" background-color:#D6EAF8;">
+                                <tr>
+                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="pills-yellow-tc" role="tabpanel" aria-labelledby="pills-yellow-tab">
+                        <table name="tableYellow" id="tableYellowTC"
+                            class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
                                     <th width="20%" style="text-align:center">รหัสประจำตัว</th>
@@ -267,22 +356,24 @@ include_once('backend/conn.php');
             </div>
         </footer>
         <?php include_once('modal/modal_joblist.php');?>
-        <?php include_once('modal/modal_activity.php');?>        
+        <?php include_once('modal/modal_activity.php');?>
         <?php include_once('modal/modal_login.php');?>
         <?php include_once('modal/modal_register.php');?>
-        
-        
-        
 
-            <script src="js/stu_make.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>            
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>            
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-            
-            <?php include_once('js.php');?>
+
+
+
+        <script src="js/stu_make.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+        <?php include_once('js.php');?>
 </body>
 
 </html>

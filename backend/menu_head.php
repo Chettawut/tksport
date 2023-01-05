@@ -5,7 +5,7 @@
             <a class="nav-link" data-widget="pushmenu" href="<?php echo PATH; ?>" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item">
-            <a href="<?php echo PATH; ?>/../" class="btn btn-primary">Front Page</a>
+            <a href="<?php echo PATH; ?>/../" class="btn btn-primary"><i class="fa fa-arrow-left"></i> &nbsp;กลับไปหน้าเว็บ</a>
         </li>
 
     </ul>
