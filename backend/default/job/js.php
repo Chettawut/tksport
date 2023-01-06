@@ -33,7 +33,7 @@ $(function() {
             });
 
             $(".dataTables_filter input[type='search']").attr({
-                size: 60,
+                size: 35,
                 maxlength: 60
             });
 

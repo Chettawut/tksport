@@ -1,10 +1,10 @@
 <script type="text/javascript">
 $(function() {
 
-    
+
     $.ajax({
         type: "POST",
-        url: "ajax/get_person.php",        
+        url: "ajax/get_person.php",
         success: function(result) {
 
             for (count = 0; count < result.percode.length; count++) {
@@ -13,7 +13,10 @@ $(function() {
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .percode[
                         count] + '" data-whatever="' + result.percode[
-                        count] + '"><td style="text-align:center">' + result.percode[count] + '</td><td  style="text-align:center">' + result.firstname[count] + ' ' + result.lastname[count] + '</td><td  style="text-align:center">' + result.type[count] + '</td></tr>');
+                        count] + '"><td style="text-align:center">' + result.percode[count] +
+                    '</td><td  style="text-align:center">' + result.firstname[count] + ' ' +
+                    result.lastname[count] + '</td><td  style="text-align:center">' + result
+                    .type[count] + '</td></tr>');
             }
 
             var table = $('#tablePerson').DataTable({
@@ -27,7 +30,7 @@ $(function() {
             });
 
             $(".dataTables_filter input[type='search']").attr({
-                size: 60,
+                size: 35,
                 maxlength: 60
             });
 
@@ -49,13 +52,13 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         type: "POST",
         url: "ajax/getsup_person.php",
         data: "idcode=" + recipient,
-        success: function(result) {     
-            modal.find('.modal-body #percode').val(result.percode);            
-            modal.find('.modal-body #username').val(result.username);            
-            modal.find('.modal-body #password').val(result.password);            
+        success: function(result) {
+            modal.find('.modal-body #percode').val(result.percode);
+            modal.find('.modal-body #username').val(result.username);
+            modal.find('.modal-body #password').val(result.password);
             modal.find('.modal-body #firstname').val(result.firstname);
             modal.find('.modal-body #lastname').val(result.lastname);
-            modal.find('.modal-body #titlename').val(result.titlename);            
+            modal.find('.modal-body #titlename').val(result.titlename);
             modal.find('.modal-body #type').val(result.type);
             modal.find('.modal-body #level').val(result.level);
             modal.find('.modal-body #room').val(result.room);
@@ -63,7 +66,7 @@ $('#modal_edit').on('show.bs.modal', function(event) {
             modal.find('.modal-body #pergroup').val(result.pergroup);
             modal.find('.modal-body #telephone').val(result.telephone);
 
-            $('#perresetcode').val(result.percode);            
+            $('#perresetcode').val(result.percode);
             $('#resetfirstname').val(result.firstname);
             $('#resetlastname').val(result.lastname);
         }
@@ -138,5 +141,4 @@ $("#frmReset").submit(function(e) {
     });
 
 });
-
 </script>

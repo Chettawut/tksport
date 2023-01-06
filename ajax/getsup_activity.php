@@ -1,14 +1,14 @@
 <?php
 	header('Content-Type: application/json');
-	include('../../conn.php');
-
-	$sql = "SELECT a.actcode,b.titlename,b.firstname,b.lastname,d.spname,c.level,c.gender,e.jobname,a.status,a.actdetail,b.colorcode  ";	
+	include('../backend/conn.php');
+	
+	$sql = "SELECT a.actcode,b.titlename,b.firstname,b.lastname,d.spname,c.level,c.gender,e.jobname,a.status,a.actdetail  ";	
 	$sql .= "FROM activity as a  ";   
 	$sql .= "inner join person as b on (a.percode = b.percode)  ";   
 	$sql .= "LEFT OUTER JOIN sport_type as c on (a.sptcode = c.sptcode)  ";   
 	$sql .= "LEFT OUTER JOIN sport as d on (c.spcode = d.spcode)  ";   
 	$sql .= "inner join job as e on (a.jobcode = e.jobcode)  ";  
-	$sql .= "where a.status = 'N' and b.colorcode = '".$_POST["colorcode"]."' ";   
+	$sql .= "where a.percode = '".$_POST['percode']."' ";   
 
 	$query = mysqli_query($conn,$sql);
 
@@ -19,7 +19,6 @@
 		"firstname" => array(),
 		"lastname" => array(),
 		"spname" => array(),
-		"colorcode" => array(),
 		"level" => array(),
 		"gender" => array(),
 		"jobname" => array(),
@@ -33,8 +32,10 @@
 			array_push($json_result['titlename'],$row["titlename"]);
 			array_push($json_result['firstname'],$row["firstname"]);
 			array_push($json_result['lastname'],$row["lastname"]);
+			if(is_null($row["spname"]))
+			array_push($json_result['spname'],'');
+			else
 			array_push($json_result['spname'],$row["spname"]);
-			array_push($json_result['colorcode'],$row["colorcode"]);
 			array_push($json_result['level'],$row["level"]);
 			array_push($json_result['gender'],$row["gender"]);
 			array_push($json_result['jobname'],$row["jobname"]);
@@ -43,6 +44,7 @@
 			
         }
         echo json_encode($json_result);
+
 
 
 

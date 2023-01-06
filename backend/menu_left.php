@@ -39,6 +39,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/default/time" class="nav-link">
+                        <i class="nav-icon fa fa-clock"></i>
+                        <p>
+                        Sport Time
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>/default/job" class="nav-link">
                         <i class="nav-icon fa fa-edit"></i>
                         <p>
@@ -54,32 +62,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?php echo PATH; ?>/default/sport" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Sport</p>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?php echo PATH; ?>/default/job" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Job</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
-                        <i class="nav-icon 	fa fa-book"></i>
-                        <p>
-                            รายงาน (Reports)
-                        </p>
-                    </a>
-                </li> -->
+                
 
 
             </ul>

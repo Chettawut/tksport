@@ -19,19 +19,58 @@ $("#add_jobcode").change(function() {
     }
 });
 
-$('#modal_joblist').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) 
-  var recipient = button.data('whatever') 
-  var modal = $(this)
-  
-  $("#tableJoblist tbody").empty();
+$('#modal_activity').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var modal = $(this)
+
+    $("#tableActivity tbody").empty();
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/getsup_activity.php",
+        data: "percode=" + $('#act_percode').val(),
+        success: function(result) {
+            $("#spanpername").text($("#loginname").text())
+
+            for (count = 0; count < result.actcode.length; count++) {
+                var status;
+
+                if (result.status[count] == 'N')
+                    status = 'รออนุมัติ'
+                else if (result.status[count] == 'Y')
+                    status = 'อนุมัติแล้ว'
+                else if (result.status[count] == 'C')
+                    status = 'ไม่อนุมัติ'
+
+                $('#tableActivity').append(
+                    '<tr><td style="text-align:center">' +
+                    result.jobname[count] +
+                    '</td><td  style="text-align:center">' +
+                    result.actdetail[count] +
+                    '</td><td  style="text-align:center">' +
+                    result.spname[count] +
+                    '</td><td  style="text-align:center">' +
+                    status +
+                    '</td></tr>');
+            }
+        }
+    });
+})
+
+$('#modal_joblist').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var modal = $(this)
+
+    $("#tableJoblist tbody").empty();
 
     $.ajax({
         type: "POST",
         url: "ajax/getsup_joblist.php",
         data: "idcode=" + recipient,
         success: function(result) {
-            
+
             for (count = 0; count < result.actcode.length; count++) {
                 $('#tableJoblist').append(
                     '<tr><td style="text-align:center">' + result.titlename[count] + ' ' +
@@ -83,7 +122,7 @@ $("#frmAddActivity").submit(function(e) {
                 window.location.reload();
                 // console.log(result.message);
             } else {
-                alert('รหัสกิจกรรมซ้ำ');
+                alert('รหัสนักเรียนซ้ำ');
             }
         }
     });
@@ -99,9 +138,11 @@ $.ajax({
         for (count = 0; count < result.spcode.length; count++) {
 
             $('#tablesport').append(
-                '<tr data-toggle="modal" data-target="#modal_sport" data-whatever="' + result.spcode[
+                '<tr data-toggle="modal" data-target="#modal_sport" data-whatever="' + result
+                .spcode[
                     count] + '"><td style="text-align:center">' + result.spname[count] +
-                '</td><td  style="text-align:center">' + result.level[count] + '</td><td  style="text-align:center">' + result.gender[count] +
+                '</td><td  style="text-align:center">' + result.level[count] +
+                '</td><td  style="text-align:center">' + result.gender[count] +
                 '</td></tr>');
         }
     }
@@ -115,7 +156,8 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableRed').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result.percode[
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
+                .percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
@@ -193,7 +235,8 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableRedTC').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result.percode[
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
+                .percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +

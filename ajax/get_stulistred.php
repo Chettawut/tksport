@@ -2,10 +2,13 @@
 	header('Content-Type: application/json');
 	include('../backend/conn.php');
 
-	$sql = "SELECT percode,firstname,lastname,titlename,count(actcode) as count from ( ";
-	$sql .= "SELECT a.percode,a.firstname,a.lastname,a.titlename,b.actcode FROM person as a left outer join activity as b on(a.percode=b.percode) ";   
-    $sql .= "where colorcode = '1' and type = 'นักเรียน') as c ";   
+	$sql = "SELECT percode,firstname,lastname,titlename,count(num) as count from ( ";
+	$sql .= "SELECT a.percode,a.firstname,a.lastname,a.titlename,b.actcode , ";   
+	$sql .= "case when b.status = 'Y' THEN 1 end as num ";   
+	$sql .= "FROM person as a left outer join activity as b on(a.percode=b.percode)  ";   
+    $sql .= "where colorcode = '1' and type = 'นักเรียน' ) as c ";   
 	$sql .= "GROUP by percode ORDER by count desc ";   
+
 
 	$query = mysqli_query($conn,$sql);
 

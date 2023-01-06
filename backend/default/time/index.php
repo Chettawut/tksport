@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Job</title>
+    <title>Sport Time</title>
 
     <?php 
     include_once('css.php'); 
@@ -43,12 +43,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Job</h1>
+                            <h1 class="m-0">Sport Time</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">Default</a></li>
-                                <li class="breadcrumb-item">Job</li>
+                                <li class="breadcrumb-item">Sport Time</li>
                             </ol>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                                     <div class="btn-group" id="btnAdd" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่ม Job</button>
+                                            เพิ่ม Sport Time </button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -85,21 +85,20 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <div id="mainStock">
-                                <table name="tableJob" id="tableJob" class="table table-bordered table-striped">
-                                    <thead style=" background-color:#D6EAF8;">
-                                        <tr>
-                                            <th width="20%" style="text-align:center">รหัส Job</th>
-                                            <th width="60%" style="text-align:center">ชื่อ Job</th>
-                                            <th width="20%" style="text-align:center">สถานะ</th>
+                            <table name="tableSporttime" id="tableSporttime" class="table table-bordered table-striped">
+                                <thead style=" background-color:#D6EAF8;">
+                                    <tr>                                        
+                                        <th width="30%" style="text-align:center">ชื่อกีฬา</th>
+                                        <th width="15%" style="text-align:center">วันที่แข่ง</th>
+                                        <th width="15%" style="text-align:center">เวลาแข่ง</th>
+                                        <th width="20%" style="text-align:center">คู่แข่งขัน</th>
+                                        <th width="20%" style="text-align:center">รอบการแข่ง</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -107,10 +106,8 @@
             </section>
         </div>
 
-
         <?php include_once('modal/modal_add.php');?>
         <?php include_once('modal/modal_edit.php');?>
-
     </div>
 
     <?php

@@ -17,13 +17,14 @@ include_once('backend/conn.php');
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T">
     <link rel="stylesheet" href="css/stu_make.css">
+    <!-- <link rel="stylesheet" href="stu_make.css"> -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <?php include_once('css.php');?>
 </head>
 
 <body>
 
-    <?php 
+    <!-- <?php 
     if(isset($_GET['log']))
     {
         if($_GET['log']=='username')
@@ -35,7 +36,7 @@ include_once('backend/conn.php');
         echo "<script type='text/javascript'>window.location.replace('..');</script>";
 
     }
-    ?>
+    ?> -->
     <!-- -------------------------------------------- header start -------------------------------------------- -->
 
     <header class="p-3 text-bg-dark">
@@ -52,12 +53,14 @@ include_once('backend/conn.php');
                         <div class="dropdown-hidden" id="dropdown">
                             <ul
                                 class="dropdown-menu dropdown-menu-dark d-grid gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
-                                <li><a class="dropdown-item rounded-2" href="#">ตารางการแข่ง</a></li>
+                                <li><a class="dropdown-item rounded-2" href="โปรแกรมการแข่งขัน.pdf">โปรแกรมการแข่งขัน</a></li>
                                 <li><a class="dropdown-item rounded-2" href="#">กำหนดการกีฬาสี</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">ผลการแข่งขัน</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#" class="nav-link px-2 text-white">ผลการแข่งขัน</a></li>
+                    <li><a href="#" data-bs-toggle="modal"
+                    data-bs-target="#modal_admin" class="nav-link px-2 text-white">คณะผู้จัดทำ</a></li>
                     <?php
                     if(isset($_SESSION['checklogin']))
                     {
@@ -99,11 +102,14 @@ include_once('backend/conn.php');
                 else
                    {                    
                     ?>
-                <h4 style="margin-right:20px;">
+                <h4 id="loginname" style="margin-right:20px;">
                     <?php echo $_SESSION['titlename'].' '.$_SESSION['firstname'].' '.$_SESSION['lastname'];?>
                 </h4>
                 <button type="button" class="btn btn-outline-light me-2 " data-bs-toggle="modal"
-                    data-bs-target="#modal_activity"><i class="fas fa-edit"></i> เพิ่มกิจกรรมที่ทำ
+                    data-bs-target="#modal_addactivity"><i class="fas fa-plus"></i> เพิ่มกิจกรรมที่ทำ
+                </button>
+                <button type="button" class="btn btn-outline-light me-2 " data-bs-toggle="modal"
+                    data-bs-target="#modal_activity"><i class="fas fa-edit"></i> เช็คสถานะกิจกรรม
                 </button>
                 <a href="logout.php" class="btn btn-outline-light me-2">Logout</a>
                 <?php
@@ -141,13 +147,13 @@ include_once('backend/conn.php');
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="backend/img/TK_SPORT.jpg" class="d-block w-100" alt="...">
+                            <img src="backend/img/TK_Sport.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="backend/img/TK_SPORT.jpg" class="d-block w-100" alt="...">
+                            <img src="backend/img/TK_Sport.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="backend/img/TK_SPORT.jpg" class="d-block w-100" alt="...">
+                            <img src="backend/img/TK_Sport.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -162,18 +168,52 @@ include_once('backend/conn.php');
                     </button>
                 </div>
 
-                <div class="all-card">
-                    <div class="card">
-
+                <div class="news">
+                    
+                    <div class="all-card">
+                        
+                        <div class="web">
+                            <a href="#" class="text-white">
+                                <div class="card Blue">
+                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                </div>
+                            </a>
+                        </div>
+                        <div class="web">
+                            <a href="https://tksport2565.my.canva.site/#page-0" class="text-white">
+                                <div class="card Green">
+                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                </div>
+                            </a>
+                        </div>
+                        <div class="web">
+                            <a href="#" class="text-white">
+                                <div class="card Red">
+                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                </div>
+                            </a>
+                        </div>
+                        <div class="web">
+                            <a href="#" class="text-white">
+                                <div class="card Yellow">
+                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                </div>
+                            </a>
+                        </div>
+                        
                     </div>
-                    <div class="card">
-
-                    </div>
-                    <div class="card">
-
-                    </div>
-                    <div class="card">
-
+    
+                    <div class="picture">
+                        <img src="backend/img/1.jpg" alt="">
+                        <img src="backend/img/2.jpg" alt="">
+                        <img src="backend/img/3.jpg" alt="">
+                        <img src="backend/img/4.jpg" alt="">
+                        <img src="backend/img/5.jpg" alt="">
+                        <img src="backend/img/6.jpg" alt="">
+                        <img src="backend/img/7.jpg" alt="">
+                        <img src="backend/img/8.jpg" alt="">
+                        <img src="backend/img/9.jpg" alt="">
+                        <!-- <img src="/backend/img/10.jpg" alt=""> -->
                     </div>
                 </div>
             </div>
@@ -377,8 +417,10 @@ include_once('backend/conn.php');
     </footer>
     <?php include_once('modal/modal_joblist.php');?>
     <?php include_once('modal/modal_activity.php');?>
+    <?php include_once('modal/modal_addactivity.php');?>
+    <?php include_once('modal/modal_admin.php');?>
     <?php include_once('modal/modal_login.php');?>
-    <?php include_once('modal/modal_register.php');?>
+    <?php include_once('modal/modal_register.php');?>    
 
 
 
