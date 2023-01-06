@@ -132,6 +132,24 @@ $("#frmAddActivity").submit(function(e) {
 
 $.ajax({
     type: "POST",
+    url: "ajax/get_program.php",
+    success: function(result) {
+
+        for (count = 0; count < result.spcode.length; count++) {
+
+            $('#tableprogram').append(
+                '<tr data-toggle="modal" data-target="#modal_sport" data-whatever="' + result
+                .spcode[
+                    count] + '"><td style="text-align:center">' + result.spname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] +
+                '</td><td  style="text-align:center">' + result.gender[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$.ajax({
+    type: "POST",
     url: "ajax/get_sport.php",
     success: function(result) {
 

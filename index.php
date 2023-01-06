@@ -130,6 +130,8 @@ include_once('backend/conn.php');
                     role="tab" aria-controls="nav-teacherlist" aria-selected="false">รายชื่อคุณครู</a>
                 <a class="nav-item nav-link" id="nav-sportlist-tab" data-toggle="tab" href="#nav-sportlist" role="tab"
                     aria-controls="nav-sportlist" aria-selected="false">กีฬาที่จัดแข่ง</a>
+                <!-- <a class="nav-item nav-link" id="nav-programtlist-tab" data-toggle="tab" href="#nav-programlist" role="tab"
+                    aria-controls="nav-programlist" aria-selected="false">โปรแกรมการแข่งขัน</a> -->
             </div>
         </nav>
 
@@ -398,6 +400,23 @@ include_once('backend/conn.php');
                     </tbody>
                 </table>
             </div>
+            <!-- <div class="tab-pane fade" id="nav-programlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">
+                <br>
+                <table name="tableprogram" id="tableprogram" class="table table-bordered table-striped table-hover">
+                    <thead style=" background-color:#D6EAF8;">
+                        <tr>
+                            <th width="20%" style="text-align:center">วัน/เดือน/ปี</th>
+                            <th width="20%" style="text-align:center">เวลา</th>
+                            <th width="40%" style="text-align:center">คู่แข่งขัน</th>
+                            <th width="20%" style="text-align:center">ระดับ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div> -->
+            
         </div>
     </div>
 
