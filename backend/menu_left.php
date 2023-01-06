@@ -47,6 +47,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/default/result" class="nav-link">
+                        <i class="nav-icon fa fa-list-alt"></i>
+                        <p>
+                        Result
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>/default/job" class="nav-link">
                         <i class="nav-icon fa fa-edit"></i>
                         <p>

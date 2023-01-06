@@ -4,7 +4,7 @@
         header('Location: ../');
         exit;
     }
-    include_once('../conn.php');
+    include_once('../../conn.php');
 ?>
 <!DOCTYPE html>
 
@@ -13,11 +13,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Person</title>
+    <title>Sport Result</title>
 
     <?php 
     include_once('css.php'); 
-    include_once('../config.php');
+    include_once('../../config.php');
     include_once ROOT .'/func.php';
     include_once ROOT .'/import_css.php';    
     ?>
@@ -43,12 +43,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Person</h1>
+                            <h1 class="m-0">ผลการแข่งขัน</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">Default</a></li>
-                                <li class="breadcrumb-item">Person</li>
+                                <li class="breadcrumb-item">ผลการแข่งขัน</li>
                             </ol>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                             <div data-role="fieldcontain">
                                 <button type="button" class="btn btn-success form-control" data-toggle="modal"
                                     data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                    เพิ่ม Person</button>
+                                    เพิ่ม ผลการแข่งขัน</button>
 
                             </div>
                         </div>
@@ -73,15 +73,19 @@
                             </div>
                         </div>
                     </div>
+
                     <br>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <table name="tablePerson" id="tablePerson" class="table table-bordered table-striped">
+                            <table name="tableSporttime" id="tableSporttime" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>
-                                        <th width="20%" style="text-align:center">รหัสประจำตัว</th>
-                                        <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                        <th width="20%" style="text-align:center">ประเภท</th>
+                                        <th width="30%" style="text-align:center">ชื่อกีฬา</th>
+                                        <th width="10%" style="text-align:center">สีชนะเลิศ</th>
+                                        <th width="15%" style="text-align:center">วันที่แข่ง</th>
+                                        <th width="15%" style="text-align:center">เวลาแข่ง</th>
+                                        <th width="15%" style="text-align:center">คู่แข่งขัน</th>
+                                        <th width="15%" style="text-align:center">รอบการแข่ง</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -95,11 +99,8 @@
             </section>
         </div>
 
-
         <?php include_once('modal/modal_add.php');?>
         <?php include_once('modal/modal_edit.php');?>
-        <?php include_once('modal/modal_reset.php');?>
-
     </div>
 
     <?php

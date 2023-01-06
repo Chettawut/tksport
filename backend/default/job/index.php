@@ -58,28 +58,19 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6 col-6">
-                            <form data-ajax="false" target="_blank" method="post">
-                                <div data-role="fieldcontain">
+                        <div class="form-group col-lg-2 col-12">
+                            <div data-role="fieldcontain">
+                                <button type="button" class="btn btn-success form-control" data-toggle="modal"
+                                    data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
+                                    เพิ่ม Job</button>
 
-                                    <div class="btn-group" id="btnAdd" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่ม Job</button>
-                                        <button type="button" id="btnRefresh" class="btn btn-primary"><i
-                                                class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
-                                    </div>
-                                    <div class="btn-group" id="btnBack" style="display:none;" role="group"
-                                        aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
-                                                aria-hidden="true"></i>
-                                            ย้อนกลับ</button>
-                                    </div>
-
-
-
-                                </div>
-                            </form>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-2 col-12">
+                            <div data-role="fieldcontain">
+                                <button type="button" id="btnRefresh" class="btn btn-primary form-control"><i
+                                        class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
+                            </div>
                         </div>
                     </div>
                     <br>
