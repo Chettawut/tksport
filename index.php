@@ -24,7 +24,7 @@ include_once('backend/conn.php');
 
 <body>
 
-    <!-- <?php 
+     <?php 
     if(isset($_GET['log']))
     {
         if($_GET['log']=='username')
@@ -36,7 +36,7 @@ include_once('backend/conn.php');
         echo "<script type='text/javascript'>window.location.replace('..');</script>";
 
     }
-    ?> -->
+    ?> 
     <!-- -------------------------------------------- header start -------------------------------------------- -->
 
     <header class="p-3 text-bg-dark">
@@ -53,14 +53,15 @@ include_once('backend/conn.php');
                         <div class="dropdown-hidden" id="dropdown">
                             <ul
                                 class="dropdown-menu dropdown-menu-dark d-grid gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
-                                <li><a class="dropdown-item rounded-2" href="โปรแกรมการแข่งขัน.pdf">โปรแกรมการแข่งขัน</a></li>
+                                <li><a class="dropdown-item rounded-2"
+                                        href="โปรแกรมการแข่งขัน.pdf">โปรแกรมการแข่งขัน</a></li>
                                 <li><a class="dropdown-item rounded-2" href="#">กำหนดการกีฬาสี</a></li>
                                 <li><a class="dropdown-item rounded-2" href="#">ผลการแข่งขัน</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#" data-bs-toggle="modal"
-                    data-bs-target="#modal_admin" class="nav-link px-2 text-white">คณะผู้จัดทำ</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal_admin"
+                            class="nav-link px-2 text-white">คณะผู้จัดทำ</a></li>
                     <?php
                     if(isset($_SESSION['checklogin']))
                     {
@@ -75,8 +76,6 @@ include_once('backend/conn.php');
                     }
 
                     ?>
-                    <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
                 </ul>
 
 
@@ -130,8 +129,8 @@ include_once('backend/conn.php');
                     role="tab" aria-controls="nav-teacherlist" aria-selected="false">รายชื่อคุณครู</a>
                 <a class="nav-item nav-link" id="nav-sportlist-tab" data-toggle="tab" href="#nav-sportlist" role="tab"
                     aria-controls="nav-sportlist" aria-selected="false">กีฬาที่จัดแข่ง</a>
-                <!-- <a class="nav-item nav-link" id="nav-programtlist-tab" data-toggle="tab" href="#nav-programlist" role="tab"
-                    aria-controls="nav-programlist" aria-selected="false">โปรแกรมการแข่งขัน</a> -->
+                <a class="nav-item nav-link" id="nav-programtlist-tab" data-toggle="tab" href="#nav-programlist"
+                    role="tab" aria-controls="nav-programlist" aria-selected="false">โปรแกรมการแข่งขัน</a>
             </div>
         </nav>
 
@@ -171,40 +170,40 @@ include_once('backend/conn.php');
                 </div>
 
                 <div class="news">
-                    
+
                     <div class="all-card">
-                        
+
                         <div class="web">
                             <a href="#" class="text-white">
                                 <div class="card Blue">
-                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
                                 </div>
                             </a>
                         </div>
                         <div class="web">
                             <a href="https://tksport2565.my.canva.site/#page-0" class="text-white">
                                 <div class="card Green">
-                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
                                 </div>
                             </a>
                         </div>
                         <div class="web">
                             <a href="#" class="text-white">
                                 <div class="card Red">
-                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
                                 </div>
                             </a>
                         </div>
                         <div class="web">
                             <a href="#" class="text-white">
                                 <div class="card Yellow">
-                                <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
                                 </div>
                             </a>
                         </div>
-                        
+
                     </div>
-    
+
                     <div class="picture">
                         <img src="backend/img/1.jpg" alt="">
                         <img src="backend/img/2.jpg" alt="">
@@ -246,9 +245,10 @@ include_once('backend/conn.php');
                         <table name="tableRed" id="tableRed" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -260,9 +260,10 @@ include_once('backend/conn.php');
                         <table name="tableBlue" id="tableBlue" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -274,9 +275,10 @@ include_once('backend/conn.php');
                         <table name="tableGreen" id="tableGreen" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -289,9 +291,10 @@ include_once('backend/conn.php');
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -328,9 +331,10 @@ include_once('backend/conn.php');
                         <table name="tableRedTC" id="tableRedTC" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -339,12 +343,14 @@ include_once('backend/conn.php');
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-blue-tc" role="tabpanel" aria-labelledby="pills-blue-tab">
-                        <table name="tableBlueTC" id="tableBlueTC" class="table table-bordered table-striped table-hover">
+                        <table name="tableBlueTC" id="tableBlueTC"
+                            class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -357,9 +363,10 @@ include_once('backend/conn.php');
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -372,9 +379,10 @@ include_once('backend/conn.php');
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="20%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
                                     <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="20%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
+                                    <th width="15%" style="text-align:center">ห้อง</th>
+                                    <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -385,8 +393,7 @@ include_once('backend/conn.php');
                 </div>
 
             </div>
-            <div class="tab-pane fade" id="nav-sportlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">
-                <br>
+            <div class="tab-pane fade" id="nav-sportlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">                
                 <table name="tablesport" id="tablesport" class="table table-bordered table-striped table-hover">
                     <thead style=" background-color:#D6EAF8;">
                         <tr>
@@ -400,23 +407,21 @@ include_once('backend/conn.php');
                     </tbody>
                 </table>
             </div>
-            <!-- <div class="tab-pane fade" id="nav-programlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">
-                <br>
+            <div class="tab-pane fade" id="nav-programlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">                
                 <table name="tableprogram" id="tableprogram" class="table table-bordered table-striped table-hover">
                     <thead style=" background-color:#D6EAF8;">
                         <tr>
-                            <th width="20%" style="text-align:center">วัน/เดือน/ปี</th>
                             <th width="20%" style="text-align:center">เวลา</th>
+                            <th width="40%" style="text-align:center">โปรแกรมการแข่งขัน</th>
                             <th width="40%" style="text-align:center">คู่แข่งขัน</th>
-                            <th width="20%" style="text-align:center">ระดับ</th>
                         </tr>
                     </thead>
                     <tbody>
 
                     </tbody>
                 </table>
-            </div> -->
-            
+            </div>
+
         </div>
     </div>
 
@@ -439,7 +444,7 @@ include_once('backend/conn.php');
     <?php include_once('modal/modal_addactivity.php');?>
     <?php include_once('modal/modal_admin.php');?>
     <?php include_once('modal/modal_login.php');?>
-    <?php include_once('modal/modal_register.php');?>    
+    <?php include_once('modal/modal_register.php');?>
 
 
 

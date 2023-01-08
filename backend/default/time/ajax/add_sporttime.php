@@ -3,13 +3,13 @@
     include('../../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
     
-    $StrSQL = "INSERT INTO sport_time ( `sptcode`,`round`,`colorcode1`,`colorcode2`,`colorcode3`,`colorcode4`,`timedate`,`timetime`,area) ";
+    $StrSQL = "INSERT INTO sport_time ( `sptcode`,`round`,`colorcode1`,`colorcode2`,`colorcode3`,`colorcode4`,`timedate`,`timetime`,area,result_out) ";
     $StrSQL .= "VALUES (";
     $StrSQL .= "'".$_POST["add_sptcode"]."','".$_POST["add_round"]."' ";
     $StrSQL .= ",'".$_POST["add_colorcode1"]."','".$_POST["add_colorcode2"]."' ";
     $StrSQL .= ",'".$_POST["add_colorcode3"]."','".$_POST["add_colorcode4"]."' ";
     $StrSQL .= ",'".$_POST["add_timedate"]."','".$_POST["add_timetime"]."' ";
-    $StrSQL .= ",'".$_POST["add_area"]."' ";
+    $StrSQL .= ",'".$_POST["add_area"]."','N' ";
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
     

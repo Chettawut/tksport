@@ -17,11 +17,18 @@
                             <select class="form-control" name="add_timecode" id="add_timecode" required>
                                 <option value="">โปรดเลือก</option>
                                 <?php 
-                                $sql = "SELECT * FROM `sport_time` as a inner join sport_type as b on (a.sptcode=b.sptcode) inner join sport as c on (b.spcode=c.spcode) ";
+                                $sql = "SELECT timecode,spname,level,gender,timedate,timetime,colorcode3,d.colorname as colorname1,e.colorname as colorname2  ";
+                                $sql .= " FROM `sport_time` as a inner join sport_type as b on (a.sptcode=b.sptcode) inner join sport as c on (b.spcode=c.spcode)  ";
+                                $sql .= "left OUTER join color as d on (a.colorcode1=d.colorcode) ";
+	                            $sql .= "left OUTER join color as e on (a.colorcode2=e.colorcode) ";
+                                $sql .= " where result_out = 'N' ";
                                 $query = mysqli_query($conn,$sql);
                                         
                                 while($row = $query->fetch_assoc()) {
-                                   echo '<option value="'.$row["timecode"].'">'.$row["spname"].' '.$row["level"].' '.$row["gender"].' '.$row["timedate"].' '.$row["timetime"].'</option>';
+                                    if($row["colorcode3"]!='')
+                                    echo '<option value="'.$row["timecode"].'">'.$row["spname"].' '.$row["level"].' '.$row["gender"].' '.$row["timedate"].' '.$row["timetime"].' แข่งทุกสี</option>';
+                                    else
+                                    echo '<option value="'.$row["timecode"].'">'.$row["spname"].' '.$row["level"].' '.$row["gender"].' '.$row["timedate"].' '.$row["timetime"].' '.$row["colorname1"].' เจอกับ '.$row["colorname2"].'</option>';
                                 }
                             ?>
                             </select>

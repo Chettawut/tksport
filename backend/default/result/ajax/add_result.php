@@ -11,11 +11,22 @@
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
     
-
+    if($query) {
+    $strSQL = "UPDATE sport_time SET ";
+    $strSQL .= "result_out='Y' ";    
+    $strSQL .= "WHERE timecode= '".$_POST["add_timecode"]."' ";
+    
+    
+	$query2 = mysqli_query($conn,$strSQL);
+    }
+    else
+        {
+            echo json_encode(array('status' => '0','message'=> 'Error insert data!'));
+        }
     // echo $StrSQL;
 
 
-        if($query) {
+        if($query2) {
             echo json_encode(array('status' => '1','message'=> 'เพิ่มผลการแข่งกีฬา สำเร็จ'));
         }
         else

@@ -60,14 +60,14 @@
                 
                     <form data-ajax="false" target="_blank" method="post">
                         <div class="row">
-                            <div class="form-group col-lg-2 col-12">
+                            <!-- <div class="form-group col-lg-2 col-12">
                                 <div data-role="fieldcontain">
                                     <button type="button" class="btn btn-success form-control" data-toggle="modal"
                                         data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
                                         เพิ่ม Job</button>
 
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group col-lg-2 col-12">
                                 <div data-role="fieldcontain">
                                     <button type="button" id="btnRefresh" class="btn btn-primary form-control"><i

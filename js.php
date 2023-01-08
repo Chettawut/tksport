@@ -141,8 +141,8 @@ $.ajax({
                 '<tr data-toggle="modal" data-target="#modal_sport" data-whatever="' + result
                 .spcode[
                     count] + '"><td style="text-align:center">' + result.spname[count] +
-                '</td><td  style="text-align:center">' + result.level[count] +
-                '</td><td  style="text-align:center">' + result.gender[count] +
+                '</td><td  style="text-align:center">' + result.timedate[count] +
+                '</td><td  style="text-align:center">' + result.timetime[count] +
                 '</td></tr>');
         }
     }
@@ -179,6 +179,8 @@ $.ajax({
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }
@@ -193,12 +195,13 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableBlue').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
                 .percode[
-                    count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }
@@ -213,12 +216,13 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableGreen').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
                 .percode[
-                    count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }
@@ -233,12 +237,13 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableYellow').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
                 .percode[
-                    count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }
@@ -258,6 +263,8 @@ $.ajax({
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }
@@ -272,12 +279,13 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableBlueTC').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
                 .percode[
-                    count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }
@@ -292,12 +300,13 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableGreenTC').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
                 .percode[
-                    count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }
@@ -312,12 +321,13 @@ $.ajax({
         for (count = 0; count < result.percode.length; count++) {
 
             $('#tableYellowTC').append(
-                '<tr data-toggle="modal" data-target="#modal_joblist" id="' + result
+                '<tr data-toggle="modal" data-target="#modal_joblist" data-whatever="' + result
                 .percode[
-                    count] + '" data-whatever="' + result.percode[
                     count] + '"><td style="text-align:center">' + result.percode[count] +
                 '</td><td  style="text-align:center">' + result.titlename[count] + ' ' + result
                 .firstname[count] + ' ' + result.lastname[count] +
+                '</td><td  style="text-align:center">' + result.level[count] + '/' + result.room[
+                count] +
                 '</td><td  style="text-align:center">' + result.count[count] +
                 '</td></tr>');
         }

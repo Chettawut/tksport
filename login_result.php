@@ -34,6 +34,8 @@ if ($stmt->num_rows > 0) {
 			$_SESSION['type'] = 'นักเรียน';
 			else if($type=='คุณครู')
 			$_SESSION['type'] = 'คุณครู';
+			if($type=='AdminColor')
+			$_SESSION['type'] = 'AdminColor';
 			
 			if($type=='Admin')
 			header( "Location: backend");
