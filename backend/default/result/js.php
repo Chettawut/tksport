@@ -9,18 +9,20 @@ $(function() {
 
             for (count = 0; count < result.timecode.length; count++) {
 
-                let match,round
+                let match, round
                 if (result.colorcode3[count] == null)
-                match = result.colorcode1[count] + ' VS ' + result.colorcode2[count]
+                    match = result.colorcode1[count] + ' VS ' + result.colorcode2[count]
                 else
-                match = 'ทุกสี'
-                    
-                if(result.round[count] = '1')
-                round= 'รอบทั่วไป'
-                else if(result.round[count] = '2')
-                round= 'รอบชิงชนะเลิศ'
-                else if(result.round[count] = '3')
-                round= 'รอบชิงที่ 3'
+                    match = 'ทุกสี'
+
+                if (result.round[count] == '1')
+                    round = 'รอบทั่วไป'
+                else if (result.round[count] == '2')
+                    round = 'รอบชิงชนะเลิศ'
+                else if (result.round[count] == '3')
+                    round = 'รอบชิงที่ 3'
+                else if (result.round[count] == '4')
+                    round = 'รอบรองชนะเลิศ'
 
                 $('#tableSporttime').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
@@ -73,13 +75,26 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         url: "ajax/getsup_result.php",
         data: "idcode=" + recipient,
         success: function(result) {
-            modal.find('.modal-body #resultcode').val(result.resultcode);
-            modal.find('.modal-body #timecode').val(result.timecode);
-            modal.find('.modal-body #round').val(result.round);
-            modal.find('.modal-body #resultcolor1').val(result.resultcolor1);
-            modal.find('.modal-body #resultcolor2').val(result.resultcolor2);
-            modal.find('.modal-body #resultcolor3').val(result.resultcolor3);
-            modal.find('.modal-body #resultcolor4').val(result.resultcolor4);
+            modal.find('.modal-body #resultcode').val(result.resultcode[0]);
+            modal.find('.modal-body #timecode').val(result.timecode[0]);
+            modal.find('.modal-body #round').val(result.round[0]);
+
+            if (result.resultcode.length < '3') {
+                $('#div3').hide()
+                $('#div4').hide()
+                modal.find('.modal-body #resultcolor3').val('');
+                modal.find('.modal-body #detailcode3').val('');
+                modal.find('.modal-body #resultcolor4').val('');
+                modal.find('.modal-body #detailcode4').val('');
+            } else {
+                $('#div3').show()
+                $('#div4').show()
+            }
+
+            for (count = 0; count < result.resultcode.length; count++) {
+                modal.find('.modal-body #resultcolor'+(count+1)).val(result.colorcode[count]);
+                modal.find('.modal-body #detailcode'+(count+1)).val(result.detailcode[count]);
+            }
         }
     });
 
@@ -116,6 +131,7 @@ $("#frmEditResult").submit(function(e) {
     $(':disabled').each(function(e) {
         $(this).removeAttr('disabled');
     })
+    // alert($("#frmEditResult").serialize())
     $.ajax({
         type: "POST",
         url: "ajax/edit_result.php",

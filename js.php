@@ -138,6 +138,22 @@ $("#frmAddActivity").submit(function(e) {
 
 $.ajax({
     type: "POST",
+    url: "ajax/get_score.php",
+    success: function(result) {
+        
+        for (count = 0; count < result.num.length; count++) {
+            
+            $('#tableScore').append(
+                '<tr ><td style="text-align:center">' + result.num[count] +
+                '</td><td  style="text-align:center">' + result.colorname[count] +
+                '</td><td  style="text-align:center">' + result.score[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$.ajax({
+    type: "POST",
     url: "ajax/get_program.php",
     success: function(result) {
 

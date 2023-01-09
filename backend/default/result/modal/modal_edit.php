@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">แก้ไข Sport</h5>
+                <h5 class="modal-title">แก้ไขผลการแข่งขัน</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -20,8 +20,7 @@
                                  $sql = "SELECT timecode,spname,level,gender,timedate,timetime,colorcode3,d.colorname as colorname1,e.colorname as colorname2  ";
                                  $sql .= " FROM `sport_time` as a inner join sport_type as b on (a.sptcode=b.sptcode) inner join sport as c on (b.spcode=c.spcode)  ";
                                  $sql .= "left OUTER join color as d on (a.colorcode1=d.colorcode) ";
-                                 $sql .= "left OUTER join color as e on (a.colorcode2=e.colorcode) ";
-                                 $sql .= " where result_out = 'N' ";
+                                 $sql .= "left OUTER join color as e on (a.colorcode2=e.colorcode) ";                                 
                                  $query = mysqli_query($conn,$sql);
                                          
                                  while($row = $query->fetch_assoc()) {
@@ -39,6 +38,7 @@
                                 <option value="1">รอบทั่วไป</option>
                                 <option value="2">รอบชิงชนะเลิศ</option>
                                 <option value="3">รอบชิงที่ 3</option>
+                                <option value="4">รอบรองชนะเลิศ</option>
                             </select>
                         </div>
                     </div>
@@ -55,8 +55,10 @@
                                                 echo '<option value="'.$row["colorcode"].'">'.$row["colorname"].'</option>';
                                             }
                                     ?>
-                            </select>
+                            </select>    
+                            <input type="hidden" id="detailcode1" name="detailcode1">                        
                         </div>
+                        
                         <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">ได้ที่2</label>
                             <select class="form-control" name="resultcolor2" id="resultcolor2" required>
@@ -70,8 +72,9 @@
                                             }
                                     ?>
                             </select>
+                            <input type="hidden" id="detailcode2" name="detailcode2">
                         </div>
-                        <div class="form-group col-lg-3 col-12">
+                        <div id="div3" class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">ได้ที่3</label>
                             <select class="form-control" name="resultcolor3" id="resultcolor3">
                                 <option value=""></option>
@@ -84,8 +87,9 @@
                                             }
                                     ?>
                             </select>
+                            <input type="hidden" id="detailcode3" name="detailcode3">
                         </div>
-                        <div class="form-group col-lg-3 col-12">
+                        <div id="div4"  class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">ได้ที่4</label>
                             <select class="form-control" name="resultcolor4" id="resultcolor4">
                                 <option value=""></option>
@@ -98,6 +102,7 @@
                                             }
                                     ?>
                             </select>
+                            <input type="hidden" id="detailcode4" name="detailcode4">
                         </div>                        
                     </div>
                     <input type="hidden" id="resultcode" name="resultcode">

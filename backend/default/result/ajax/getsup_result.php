@@ -3,9 +3,8 @@
 	include('../../../conn.php');
 
 	   
-	$sql = "SELECT z.resultcode,a.timecode ";
-	$sql .= ",z.resultcolor1,z.resultcolor2,z.resultcolor3,z.resultcolor4,a.round  ";   
-	$sql .= "FROM result as z inner join sport_time as a on (z.timecode=a.timecode) inner join sport_type as b on(a.sptcode=b.sptcode) inner join sport as c on(b.spcode=c.spcode) ";	
+	$sql = "SELECT z.resultcode,x.detailcode,a.timecode,x.colorcode,a.round  ";	
+	$sql .= "FROM result as z inner join result_detail as x on (z.resultcode=x.resultcode) inner join sport_time as a on (z.timecode=a.timecode) inner join sport_type as b on(a.sptcode=b.sptcode) inner join sport as c on(b.spcode=c.spcode) ";	
 	$sql .= " where z.resultcode = '".$_POST['idcode']."' ";
 	
 
@@ -14,22 +13,18 @@
 	// echo $sql;
 
 	$json_result=array(
+		"detailcode" => array(),
 		"resultcode" => array(),
         "timecode" => array(),
-		"resultcolor1" => array(),
-		"resultcolor2" => array(),
-		"resultcolor3" => array(),
-		"resultcolor4" => array(),
+		"colorcode" => array(),
 		"round" => array()
 		);
 		
         while($row = $query->fetch_assoc()) {
+			array_push($json_result['detailcode'],$row["detailcode"]);			
 			array_push($json_result['resultcode'],$row["resultcode"]);			
             array_push($json_result['timecode'],$row["timecode"]);			
-			array_push($json_result['resultcolor1'],$row["resultcolor1"]);
-			array_push($json_result['resultcolor2'],$row["resultcolor2"]);
-			array_push($json_result['resultcolor3'],$row["resultcolor3"]);
-			array_push($json_result['resultcolor4'],$row["resultcolor4"]);
+			array_push($json_result['colorcode'],$row["colorcode"]);
 			array_push($json_result['round'],$row["round"]);
         }
         echo json_encode($json_result);

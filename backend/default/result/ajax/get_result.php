@@ -4,13 +4,14 @@
 
 	   
 	$sql = "SELECT z.resultcode,a.timecode,b.sptcode,c.spname,b.level,b.gender,a.timedate,a.timetime, ";
-	$sql .= "d.colorname as colorcode1,e.colorname as colorcode2,f.colorname as colorcode3,g.colorname as colorcode4,a.round,a.area,h.colorname as resultcolor1  ";   
-	$sql .= "FROM result as z inner join sport_time as a on (z.timecode=a.timecode) inner join sport_type as b on(a.sptcode=b.sptcode) inner join sport as c on(b.spcode=c.spcode) ";
+	$sql .= "d.colorname as colorcode1,e.colorname as colorcode2,f.colorname as colorcode3,g.colorname as colorcode4,a.round,a.area,h.colorname as resultcolor1   ";   
+	$sql .= "FROM result as z inner join result_detail as x on (z.resultcode=x.resultcode) inner join sport_time as a on (z.timecode=a.timecode) inner join sport_type as b on(a.sptcode=b.sptcode) inner join sport as c on(b.spcode=c.spcode) ";
 	$sql .= "left OUTER join color as d on (a.colorcode1=d.colorcode) ";
 	$sql .= "left OUTER join color as e on (a.colorcode2=e.colorcode) ";
 	$sql .= "left OUTER join color as f on (a.colorcode3=f.colorcode) ";
 	$sql .= "left OUTER join color as g on (a.colorcode4=g.colorcode) ";
-	$sql .= "left OUTER join color as h on (z.resultcolor1=h.colorcode) ";
+	$sql .= "left OUTER join color as h on (x.colorcode=h.colorcode) ";
+	$sql .= " where x.order_no = '1' ";
 
 	$query = mysqli_query($conn,$sql);
 

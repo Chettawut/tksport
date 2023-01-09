@@ -204,6 +204,22 @@ include_once('backend/conn.php');
                         </div>
 
                     </div>
+                    <div class="row">
+                        <div class="form-group col-lg-12 col-12">
+                            <table name="tableScore" id="tableScore" class="table table-bordered table-striped">
+                                <thead style=" background-color:#D6EAF8;">
+                                    <tr>
+                                        <th width="30%" style="text-align:center">อันดับ</th>
+                                        <th width="40%" style="text-align:center">ชื่อสี</th>
+                                        <th width="30%" style="text-align:center">คะแนน</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                     <div class="picture">
                         <img src="backend/img/1.jpg" alt="">

@@ -28,6 +28,8 @@ $(function() {
                 round= 'รอบชิงชนะเลิศ'
                 else if(result.round[count] == '3')
                 round= 'รอบชิงที่ 3'
+                else if(result.round[count] = '4')
+                round= 'รอบรองชนะเลิศ'
 
                 $('#tableSporttime').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
