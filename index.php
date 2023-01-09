@@ -19,12 +19,13 @@ include_once('backend/conn.php');
     <link rel="stylesheet" href="css/stu_make.css">
     <!-- <link rel="stylesheet" href="stu_make.css"> -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
     <?php include_once('css.php');?>
 </head>
 
 <body>
 
-     <?php 
+    <?php 
     if(isset($_GET['log']))
     {
         if($_GET['log']=='username')
@@ -36,7 +37,7 @@ include_once('backend/conn.php');
         echo "<script type='text/javascript'>window.location.replace('..');</script>";
 
     }
-    ?> 
+    ?>
     <!-- -------------------------------------------- header start -------------------------------------------- -->
 
     <header class="p-3 text-bg-dark">
@@ -245,8 +246,8 @@ include_once('backend/conn.php');
                         <table name="tableRed" id="tableRed" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -260,8 +261,8 @@ include_once('backend/conn.php');
                         <table name="tableBlue" id="tableBlue" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -275,8 +276,8 @@ include_once('backend/conn.php');
                         <table name="tableGreen" id="tableGreen" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -291,8 +292,8 @@ include_once('backend/conn.php');
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -331,8 +332,8 @@ include_once('backend/conn.php');
                         <table name="tableRedTC" id="tableRedTC" class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -347,8 +348,8 @@ include_once('backend/conn.php');
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -363,8 +364,8 @@ include_once('backend/conn.php');
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -379,8 +380,8 @@ include_once('backend/conn.php');
                             class="table table-bordered table-striped table-hover">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="10%" style="text-align:center">รหัสประจำตัว</th>
-                                    <th width="60%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="15%" style="text-align:center">รหัสประจำตัว</th>
+                                    <th width="55%" style="text-align:center">ชื่อ นามสกุล</th>
                                     <th width="15%" style="text-align:center">ห้อง</th>
                                     <th width="15%" style="text-align:center">จำนวนกิจกรรมที่ทำ</th>
                                 </tr>
@@ -393,7 +394,7 @@ include_once('backend/conn.php');
                 </div>
 
             </div>
-            <div class="tab-pane fade" id="nav-sportlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">                
+            <div class="tab-pane fade" id="nav-sportlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">
                 <table name="tablesport" id="tablesport" class="table table-bordered table-striped table-hover">
                     <thead style=" background-color:#D6EAF8;">
                         <tr>
@@ -407,13 +408,14 @@ include_once('backend/conn.php');
                     </tbody>
                 </table>
             </div>
-            <div class="tab-pane fade" id="nav-programlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">                
+            <div class="tab-pane fade" id="nav-programlist" role="tabpanel" aria-labelledby="nav-teacherlist-tab">
                 <table name="tableprogram" id="tableprogram" class="table table-bordered table-striped table-hover">
                     <thead style=" background-color:#D6EAF8;">
                         <tr>
-                            <th width="20%" style="text-align:center">เวลา</th>
-                            <th width="40%" style="text-align:center">โปรแกรมการแข่งขัน</th>
-                            <th width="40%" style="text-align:center">คู่แข่งขัน</th>
+                            <th width="10%" style="text-align:center">เวลา</th>
+                            <th width="50%" style="text-align:center">โปรแกรมการแข่งขัน</th>
+                            <th width="20%" style="text-align:center">คู่แข่งขัน</th>
+                            <th width="20%" style="text-align:center">ผลการแข่งขัน</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -459,6 +461,7 @@ include_once('backend/conn.php');
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <?php include_once('js.php');?>
 </body>
 

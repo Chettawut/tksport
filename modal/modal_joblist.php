@@ -11,8 +11,9 @@
                         <table name="tableJoblist" id="tableJoblist" class="table table-bordered table-striped">
                             <thead style=" background-color:#D6EAF8;">
                                 <tr>
-                                    <th width="40%" style="text-align:center">ชื่อ นามสกุล</th>
-                                    <th width="60%" style="text-align:center">กิจกรรมที่ทำ</th>
+                                    <th width="30%" style="text-align:center">ชื่อ นามสกุล</th>
+                                    <th width="40%" style="text-align:center">กิจกรรมที่ทำ</th>
+                                    <th width="30%" style="text-align:center">กีฬาที่เล่น</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -22,11 +22,11 @@ $(function() {
                 match = 'ทุกสี'
                     
 
-                if(result.round[count] = '1')
+                if(result.round[count] == '1')
                 round= 'รอบทั่วไป'
-                else if(result.round[count] = '2')
+                else if(result.round[count] == '2')
                 round= 'รอบชิงชนะเลิศ'
-                else if(result.round[count] = '3')
+                else if(result.round[count] == '3')
                 round= 'รอบชิงที่ 3'
 
                 $('#tableSporttime').append(

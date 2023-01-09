@@ -32,6 +32,7 @@
                                 <option value="1">รอบทั่วไป</option>
                                 <option value="2">รอบชิงชนะเลิศ</option>
                                 <option value="3">รอบชิงที่ 3</option>
+                                <option value="4">รอบรองชนะเลิศ</option>
                             </select>
                         </div>
                     </div>
