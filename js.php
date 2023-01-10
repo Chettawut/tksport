@@ -165,7 +165,7 @@ $.ajax({
                 const date = new Date(parseInt(result.timedate[count].substring(0, 4)), parseInt(result
                     .timedate[count].substring(5, 7)) - 1, parseInt(result.timedate[count]
                     .substring(8, 10)))
-                // alert(date)
+                // alert(result.resultcolor[count])
                 const resultdate = date.toLocaleDateString('th-TH', {
                     year: 'numeric',
                     month: 'long',
@@ -186,7 +186,7 @@ $.ajax({
             if (result.resultcolor[count] == null)
                 resultcolor = '-'
             else
-                resultcolor = color[result.resultcolor[count]]
+                resultcolor = result.resultcolor[count]
 
             $('#tableprogram').append(
                 '<tr data-toggle="modal" data-target="#modal_sport" data-whatever="' + result

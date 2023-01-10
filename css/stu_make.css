@@ -303,6 +303,11 @@ body .all-card .Yellow {
   background: #f4bc54;
 }
 
+.size {
+   width: 500px;
+   background-color: #333;
+   
+}
 
 /* -------------------------------------------------------- content end -------------------------------------------------------- */
 footer{

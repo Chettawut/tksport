@@ -16,8 +16,8 @@ include_once('backend/conn.php');
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T">
-    <link rel="stylesheet" href="css/stu_make.css">
-    <!-- <link rel="stylesheet" href="stu_make.css"> -->
+    <!-- <link rel="stylesheet" href="css/stu_make.css"> -->
+    <link rel="stylesheet" href="stu_make.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
     <?php include_once('css.php');?>
@@ -204,14 +204,14 @@ include_once('backend/conn.php');
                         </div>
 
                     </div>
-                    <div class="row">
-                        <div class="form-group col-lg-12 col-12">
-                            <table name="tableScore" id="tableScore" class="table table-bordered table-striped">
+                    <div class="row ">
+                        <div class="form-group col-lg-12 col-12 size">
+                            <table name="tableScore" id="tableScore" class="table table-bordered table-striped ">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>
-                                        <th width="30%" style="text-align:center">อันดับ</th>
-                                        <th width="40%" style="text-align:center">ชื่อสี</th>
-                                        <th width="30%" style="text-align:center">คะแนน</th>
+                                        <th style="text-align:center">อันดับ</th>
+                                        <th style="text-align:center">ชื่อสี</th>
+                                        <th style="text-align:center">คะแนน</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -221,7 +221,7 @@ include_once('backend/conn.php');
                         </div>
                     </div>
 
-                    <div class="picture">
+                    <!-- <div class="picture">
                         <img src="backend/img/1.jpg" alt="">
                         <img src="backend/img/2.jpg" alt="">
                         <img src="backend/img/3.jpg" alt="">
@@ -231,8 +231,7 @@ include_once('backend/conn.php');
                         <img src="backend/img/7.jpg" alt="">
                         <img src="backend/img/8.jpg" alt="">
                         <img src="backend/img/9.jpg" alt="">
-                        <!-- <img src="/backend/img/10.jpg" alt=""> -->
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-studentlist" role="tabpanel" aria-labelledby="nav-studentlist-tab">
