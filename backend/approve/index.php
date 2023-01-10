@@ -46,7 +46,7 @@
                             <h1 class="m-0">อนุมัติ Approve</h1>
                         </div>
                         <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">                                
+                            <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">Approve</li>
                             </ol>
                         </div>
@@ -57,7 +57,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <input type="hidden" id="colorcode" name="colorcode" value="<?php  echo $_SESSION['colorcode'];?>">
-                
+
                     <form data-ajax="false" target="_blank" method="post">
                         <div class="row">
                             <!-- <div class="form-group col-lg-2 col-12">
@@ -76,15 +76,25 @@
                             </div>
                         </div>
                     </form>
+                    <!-- <div class="row">
+                        <div class="col-lg-12 col-12" style="text-align:center;color:red;">
+                        <h5>
+                           ไม่อนุมัติ คลิกเข้าไปที่ชื่อกิจกรรม
+                           </h5>
+                        </div>
+                    </div> -->
+
                     <div class="row">
                         <div class="col-lg-12 col-12">
                             <table name="tableApprove" id="tableApprove" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>
-                                        <th width="30%" style="text-align:center">ชื่อ นามสกุล</th>
-                                        <th width="30%" style="text-align:center">กิจกรรม</th>
-                                        <th width="35%" style="text-align:center">กีฬา</th>                                        
-                                        <th width="5%" style="text-align:center">อนุมัติ</th>
+                                        <th width="20%" style="text-align:center">ชื่อ นามสกุล</th>
+                                        <th width="10%" style="text-align:center">ชั้น</th>
+                                        <th width="20%" style="text-align:center">กิจกรรม</th>
+                                        <th width="30%" style="text-align:center">กีฬา</th>
+                                        <th width="10%" style="text-align:center">อนุมัติ</th>
+                                        <th width="10%" style="text-align:center">ไม่อนุมัติ</th>
                                     </tr>
                                 </thead>
                                 <tbody>

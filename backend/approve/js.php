@@ -19,6 +19,11 @@ $(function() {
                     '</td><td data-toggle="modal" data-target="#modal_edit" id="' + result
                     .actcode[
                         count] + '" data-whatever="' + result.actcode[
+                        count] + '" style="text-align:center">' + result.perlevel[count] +
+                    '/' + result.room[count] +
+                    '</td><td data-toggle="modal" data-target="#modal_edit" id="' + result
+                    .actcode[
+                        count] + '" data-whatever="' + result.actcode[
                         count] + '" style="text-align:center">' + result.jobname[count] +
                     '</td><td data-toggle="modal" data-target="#modal_edit" id="' + result
                     .actcode[
@@ -28,7 +33,10 @@ $(function() {
                     '</td><td><button type="button" onClick="onApprove(\'' +
                     result.actcode[
                         count] +
-                    '\')"; class="btn btn-success form-control" ><i class="fa fa fa-check" aria-hidden="true"></i class=></button></td></tr>'
+                    '\')"; class="btn btn-success form-control" ><i class="fa fa fa-check" aria-hidden="true"></i class=></button></td><td><button type="button" onClick="onNoApprove(\'' +
+                    result.actcode[
+                        count] +
+                    '\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
                 );
                 // '.$row["spname"].' '.$row["level"].$row["gender"].'
             }
@@ -62,6 +70,26 @@ function onApprove(actcode) {
     $.ajax({
         type: "POST",
         url: "ajax/approve_activity.php",
+        data: "actcode=" + $('#actcode').val(),
+        success: function(result) {
+            if (result.status == 1) // Success
+            {
+                alert(result.message);
+                window.location.reload();
+                // console.log(result.message);
+            } else {
+                alert('รหัสประจำตัวซ้ำ');
+            }
+        }
+    });
+
+}
+
+function onNoApprove(actcode) {
+    //   alert(actcode)
+    $.ajax({
+        type: "POST",
+        url: "ajax/cancle_activity.php",
         data: "actcode=" + $('#actcode').val(),
         success: function(result) {
             if (result.status == 1) // Success

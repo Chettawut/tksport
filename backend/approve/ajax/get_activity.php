@@ -2,7 +2,7 @@
 	header('Content-Type: application/json');
 	include('../../conn.php');
 
-	$sql = "SELECT a.actcode,b.titlename,b.firstname,b.lastname,d.spname,c.level,c.gender,e.jobname,a.status,a.actdetail,b.colorcode  ";	
+	$sql = "SELECT a.actcode,b.titlename,b.firstname,b.lastname,b.level as perlevel,b.room,d.spname,c.level,c.gender,e.jobname,a.status,a.actdetail,b.colorcode  ";	
 	$sql .= "FROM activity as a  ";   
 	$sql .= "inner join person as b on (a.percode = b.percode)  ";   
 	$sql .= "LEFT OUTER JOIN sport_type as c on (a.sptcode = c.sptcode)  ";   
@@ -18,6 +18,8 @@
 		"titlename" => array(),
 		"firstname" => array(),
 		"lastname" => array(),
+		"perlevel" => array(),
+		"room" => array(),
 		"spname" => array(),
 		"colorcode" => array(),
 		"level" => array(),
@@ -32,6 +34,8 @@
             array_push($json_result['actcode'],$row["actcode"]);
 			array_push($json_result['titlename'],$row["titlename"]);
 			array_push($json_result['firstname'],$row["firstname"]);
+			array_push($json_result['perlevel'],$row["perlevel"]);
+			array_push($json_result['room'],$row["room"]);
 			array_push($json_result['lastname'],$row["lastname"]);
 			array_push($json_result['spname'],$row["spname"]);
 			array_push($json_result['colorcode'],$row["colorcode"]);
