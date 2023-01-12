@@ -53,59 +53,18 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 10%">อันดับ</th>
-                                        <th style="width: 50%">ชื่อสี</th>
-                                        <th style="width: 30%">คะแนน</th>
-                                        <th style="width: 10%">Label</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1.</td>
-                                        <td>สีแดง</td>
-                                        <td><span class="badge bg-danger">0</span></td>
-                                        <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: 0%"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2.</td>
-                                        <td>สีฟ้า</td>
-                                        <td><span class="badge bg-primary">0</span></td>
-                                        <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-warning" style="width: 0%"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3.</td>
-                                        <td>สีเขียว</td>
-                                        <td><span class="badge bg-success">0</span></td>
-                                        <td>
-                                            <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar bg-primary" style="width: 0%"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4.</td>
-                                        <td>สีเหลือง</td>
-                                        <td><span class="badge bg-warning">0</span></td>
-                                        <td>
-                                            <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar bg-success" style="width: 0%"></div>
-                                            </div>
-                                        </td>
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <table name="tableScore" id="tableScore" class="table table-bordered table-striped ">
+                                    <thead style=" background-color:#D6EAF8;">
+                                        <tr>
+                                            <th style="text-align:center">อันดับ</th>
+                                            <th style="text-align:center">ชื่อสี</th>
+                                            <th style="text-align:center">คะแนน</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
                         </div>
                     </div>
                 </div>
@@ -116,6 +75,64 @@
     </div>
     <?php include_once('import_js.php'); ?>
 
+    <?php include_once('modal/modal_scorelist.php');?>
+
 </body>
 
 </html>
+
+<script>
+$.ajax({
+    type: "POST",
+    url: "../ajax/get_score.php",
+    success: function(result) {
+
+        for (count = 0; count < result.num.length; count++) {
+
+            $('#tableScore').append(
+                '<tr data-toggle="modal" data-target="#modal_scorelist" data-whatever="' + result
+                .colorcode[
+                    count] + '"><td style="text-align:center">' + result.num[count] +
+                '</td><td  style="text-align:center">' + result.colorname[count] +
+                '</td><td  style="text-align:center">' + result.score[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$('#modal_scorelist').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var modal = $(this)
+
+    $("#tableScorelist tbody").empty();
+    $("#tableScorelist tfoot").empty();
+
+    $.ajax({
+        type: "POST",
+        url: "../ajax/getsup_score.php",
+        data: "idcode=" + recipient,
+        success: function(result) {
+
+            let sum = 0
+
+            for (count = 0; count < result.spname.length; count++) {
+
+                sum+=parseInt(result.score[count])
+
+                $('#tableScorelist tbody').append(
+                    '<tr ><td style="text-align:center">' + (count+1) +
+                    '</td><td style="text-align:left">' + result.spname[count]+ ' ' + result.level[count]+ ' ' + result.gender[count] +
+                    '</td><td  style="text-align:center">' + result.rank[count] +
+                    '</td><td  style="text-align:center">' + result.score[count] +
+                    '</td></tr>');
+
+            }
+
+            $('#tableScorelist tfoot').append(
+                    '<tr ><td style="text-align:right" colspan="3">คะแนนรวม</td><td  style="text-align:center">' + sum +
+                    '</td></tr>');
+        }
+    });
+})
+</script>

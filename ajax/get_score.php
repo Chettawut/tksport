@@ -2,7 +2,7 @@
 	header('Content-Type: application/json');
 	include('../backend/conn.php');
 
-	$sql = "SELECT ROW_NUMBER() OVER (ORDER BY score desc) as num,colorname,IFNULL(sum(b.score), 0 ) as score ";
+	$sql = "SELECT ROW_NUMBER() OVER (ORDER BY score desc) as num,y.colorcode,colorname,IFNULL(sum(b.score), 0 ) as score ";
 	$sql .= "FROM `color` as y LEFT OUTER join  ";   
 	$sql .= "(SELECT colorcode,sptcode,spname,rank,CASE  ";   
 	$sql .= "WHEN count_result=0 THEN 0 WHEN rank = '1' THEN score1 WHEN rank = '2' THEN score2 WHEN rank = '3' THEN   ";   
@@ -22,6 +22,7 @@
 
 	$json_result=array(
 		"num" => array(),
+		"colorcode" => array(),
         "colorname" => array(),
 		"score" => array()
 		
@@ -29,6 +30,7 @@
 		
         while($row = $query->fetch_assoc()) {
 			array_push($json_result['num'],$row["num"]);
+			array_push($json_result['colorcode'],$row["colorcode"]);
             array_push($json_result['colorname'],$row["colorname"]);
 			array_push($json_result['score'],$row["score"]);
 			

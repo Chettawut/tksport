@@ -63,7 +63,10 @@
     border-color: rgba(255, 255, 255, .15);
   }
   
+
+
   
+
   .w-220px {
     width: 220px;
   }
@@ -91,12 +94,10 @@
 .dropdown-show {
     display: block;
 }
-/* 
-::placeholder {
-  color: #000;
-} */
 
-
+.space-p-0 {
+  padding: 0;
+}
 
 .space-t-32 {
   margin-top: 32px;
@@ -151,7 +152,9 @@
 
 /* -------------------------------------------------------- all func  -------------------------------------------------------- */
 
-
+a {
+  text-decoration: none;
+}
 
 
 .icon-change:hover{
@@ -234,6 +237,7 @@ form {
 
 .news {
   width: 100%;
+  height: 100%;
 }
 
 
@@ -244,33 +248,6 @@ form {
   justify-items: center;
   
 }
-
-.card {
-  width: 300px;
-  height: 400px;
-  border-radius: 15px;
-  align-items: center;
-  
-  
-}
-
-/* .card h3 {
-  font-size: 18px;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #fff;
-  color: #000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card h3:hover {
-  background-color: #000;
-  color: #fff;
-} */
-
 
 
 .picture {
@@ -287,26 +264,45 @@ form {
   padding: 20px;
 }
 
-body .all-card .Blue  {
-  background: #2196f3;
-}
 
-body .all-card .Red  {
-  background: #e91e63;
-}
-
-body .all-card .Green {
-  background: #23c186;
-}
-
-body .all-card .Yellow {
-  background: #f4bc54;
+.size {
+  width: 100%;
 }
 
 .row {
-  margin: 0;
-  
+  margin-left: 0;
+  margin-right: 0;
 }
+
+.text-score {
+  text-align: center;
+}
+
+.table-s-p{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.all-pic-sportdays {
+  width: 100%;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.post-content {
+  width: 100%;
+  padding: 1rem;
+}
+
+.post-content img {
+  width: 100%;
+  text-decoration: none;
+}
+
+
 
 /* -------------------------------------------------------- content end -------------------------------------------------------- */
 footer{
@@ -320,12 +316,12 @@ footer{
 /* -------------------------------------------------------- footer end -------------------------------------------------------- */
 
 
-@media only screen and (max-width: 1330px) {
+/* @media only screen and (max-width: 1330px) {
   .card{
     width: 250px;
     height: 300px;
   }
-}
+} */
 @media only screen and (max-width: 1100px) {
   
   .all-card{
@@ -337,16 +333,15 @@ footer{
     margin: 20px;
   }
 }
-@media only screen and (min-width: 992px) {
-  .search {
-    margin: 0 16px 0 0;
-  }
-}
 @media only screen and (max-width: 700px) {
 
-  .card {
-    width: 150px;
-    height: 180px;
+  .all-card{
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
+  
+  .card{
+    margin: 20px;
   }
 
 
@@ -378,17 +373,6 @@ footer{
     background-color: #fff;
     color: #888;
   }
-  @media only screen and (max-width: 470px) {
-    .card {
-      width: 100px;
-      height: 120px;
-    }
-  }
-  @media only screen and (max-width: 370px) {
-    .card {
-      width: 80px;
-      height: 100px;
-    }
-  }
+  
   
 }

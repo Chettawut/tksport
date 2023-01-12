@@ -49,7 +49,7 @@ include_once('backend/conn.php');
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
+                    <!-- <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
                     <li><a href="#" class="nav-link px-2 text-white" onclick="show()">ข้อมูลการแข่งขัน</a>
                         <div class="dropdown-hidden" id="dropdown">
                             <ul
@@ -60,7 +60,7 @@ include_once('backend/conn.php');
                                 <li><a class="dropdown-item rounded-2" href="#">ผลการแข่งขัน</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal_admin"
                             class="nav-link px-2 text-white">คณะผู้จัดทำ</a></li>
                     <?php
@@ -86,15 +86,15 @@ include_once('backend/conn.php');
                 if (!isset($_SESSION['checklogin'])) 
                   {
                   ?>
-                <form class="col-7 col-lg-auto mb-3 mb-lg-0 me-lg-3 search" role="search">
+                <!-- <form class="col-7 col-lg-auto mb-3 mb-lg-0 me-lg-3 search" role="search">
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
                         aria-label="Search">
-                </form>
+                </form> -->
                 <div class="text-end relative icon pointer ">
                     <button type="button" class="btn btn-outline-light me-2 " data-bs-toggle="modal"
                         data-bs-target="#exampleModalToggle"><img class="icon-change"
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVR4nO2SvQ7BYBiFq4vJQmJRG4bubsFmcyusXERvQppOSETchMUiNiOJn43hkS85RKIt4hNLn+RdTs57Ttu3jpNhA8ADQuCoiYC6zfAdzxitYqMgVODIBGrG0oY2Co4Kuz8tUJW2t1FwUJj3q4JIYWPdw8xEWmijoAFsE45c+7rAoMMO9bkOOryd8IxEABdoAgNgDiyBk2YprS+P+0lwHugBm5g/Jwnj7ZrdV+FlYPGwuAYCoA34QEHjSwvkuWF2y2kFMxnNJ2i9+cY5oAOstDtNM19kKr4T/ghQ0u45zWQF528FGU4MV3Z+ORoPzBgyAAAAAElFTkSuQmCC"
-                            width="21" height="22" viewBox="0 0 21 22" fill="none" class="block" data-v-13416097="">
+                            width="21" height="22" viewBox="0 0 21 22" fill="none" class="block" data-v-13416097=""> Login
                     </button>
                 </div>
                 <?php
@@ -175,63 +175,88 @@ include_once('backend/conn.php');
                     <div class="all-card">
 
                         <div class="web">
-                            <a href="#" class="text-white">
-                                <div class="card Blue">
-                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                            <button type="button" class="btn space-p-0 " data-bs-toggle="modal"
+                                data-bs-target="#exampleModalToggle">
+                                <div class="card">
+                                    <img src="img/ลงทะเบียน.png" alt="">
+                                </div>
+                            </button>
+                        </div>
+                        <div class="web">
+                            <a href="กำหนดการกีฬาสี.html" class="text-white">
+                                <div class="card">
+                                    <img src="img/กำหนดการแข่งขัน.png" alt="">
                                 </div>
                             </a>
                         </div>
-                        <div class="web">
-                            <a href="https://tksport2565.my.canva.site/#page-0" class="text-white">
-                                <div class="card Green">
-                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                        <div class="web ">
+                            <!-- <a id="nav-programtlist-tab" data-toggle="tab"  href="#nav-programlist"
+                                role="tab" aria-controls="nav-programlist" aria-selected="false">
+                                <div class="card">
+                                    <img src="img/โปรแกรมการแข่งขัน.png" alt="">
+                                </div>
+                            </a> -->
+                            <a href="">
+                                <div class="card">
+                                    <img src="img/โปรแกรมการแข่งขัน.png" alt="">
                                 </div>
                             </a>
                         </div>
-                        <div class="web">
+                        <div class="web ">
                             <a href="#" class="text-white">
-                                <div class="card Red">
-                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
-                                </div>
-                            </a>
-                        </div>
-                        <div class="web">
-                            <a href="#" class="text-white">
-                                <div class="card Yellow">
-                                    <!-- <h3>เว็บไซต์คณะสี</h3> -->
+                                <div class="card">
+                                    <img src="img/กีฬาที่จัดแข่ง.png" alt="">
                                 </div>
                             </a>
                         </div>
 
                     </div>
-                    <div class="row ">
-                        <div class="form-group col-lg-12 col-12 size">
-                            <table name="tableScore" id="tableScore" class="table table-bordered table-striped ">
-                                <thead style=" background-color:#D6EAF8;">
-                                    <tr>
-                                        <th style="text-align:center">อันดับ</th>
-                                        <th style="text-align:center">ชื่อสี</th>
-                                        <th style="text-align:center">คะแนน</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                    <div class="row table-s-p">
+                        <div class="pic-sportdays">
+                            <div class="text-score"><h2>ภาพกิจกรรม</h2></div>
+                            <div class="all-pic-sportdays">
+                                <div class="post">
+                                    <div class="post-content">
+                                        <img src="img/พิธีเปิดและขบวน/ภาพปก.JPG" alt="">
+                                        <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
+                                    </div>
 
-                                </tbody>
-                            </table>
+                                    <div class="post-content">
+                                        <img src="img\พิธีเปิดและขบวน\พิธีเปิด-3.JPG" alt="">
+                                        <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
+                                    </div>
+
+                                    <div class="post-content">
+                                        <img src="img\พิธีเปิดและขบวน\เขียว_เทพี.jpg" alt="">
+                                        <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
+                                    </div>
+                                    
+                                </div>
+                                
+                                
+                            </div>
                         </div>
+                        <div class="table-score">
+                            <div class="text-score"><h2>รายงานผลคะแนน</h2></div>
+                            <div class="form-group col-lg-12 col-12 size space-t-32">
+                                <table name="tableScore" id="tableScore" class="table table-bordered table-striped ">
+                                    <thead style=" background-color:#D6EAF8;">
+                                        <tr>
+                                            <th style="text-align:center">อันดับ</th>
+                                            <th style="text-align:center">ชื่อสี</th>
+                                            <th style="text-align:center">คะแนน</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
                     </div>
 
-                    <!-- <div class="picture">
-                        <img src="backend/img/1.jpg" alt="">
-                        <img src="backend/img/2.jpg" alt="">
-                        <img src="backend/img/3.jpg" alt="">
-                        <img src="backend/img/4.jpg" alt="">
-                        <img src="backend/img/5.jpg" alt="">
-                        <img src="backend/img/6.jpg" alt="">
-                        <img src="backend/img/7.jpg" alt="">
-                        <img src="backend/img/8.jpg" alt="">
-                        <img src="backend/img/9.jpg" alt="">
-                    </div> -->
+                    
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-studentlist" role="tabpanel" aria-labelledby="nav-studentlist-tab">
@@ -457,6 +482,7 @@ include_once('backend/conn.php');
         </div>
     </footer>
     <?php include_once('modal/modal_joblist.php');?>
+    <?php include_once('modal/modal_scorelist.php');?>
     <?php include_once('modal/modal_activity.php');?>
     <?php include_once('modal/modal_addactivity.php');?>
     <?php include_once('modal/modal_admin.php');?>

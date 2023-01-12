@@ -73,10 +73,10 @@ $('#modal_joblist').on('show.bs.modal', function(event) {
             let spname
             for (count = 0; count < result.actcode.length; count++) {
                 if (result.spname[count] == null)
-                spname = '-'
+                    spname = '-'
                 else
-                spname = result.spname[count]
-                
+                    spname = result.spname[count]
+
                 $('#tableJoblist').append(
                     '<tr><td style="text-align:center">' + result.titlename[count] + ' ' +
                     result
@@ -85,6 +85,42 @@ $('#modal_joblist').on('show.bs.modal', function(event) {
                     '</td><td  style="text-align:center">' + spname +
                     '</td></tr>');
             }
+        }
+    });
+})
+
+$('#modal_scorelist').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var modal = $(this)
+
+    $("#tableScorelist tbody").empty();
+    $("#tableScorelist tfoot").empty();
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/getsup_score.php",
+        data: "idcode=" + recipient,
+        success: function(result) {
+
+            let sum = 0
+
+            for (count = 0; count < result.spname.length; count++) {
+
+                sum+=parseInt(result.score[count])
+
+                $('#tableScorelist tbody').append(
+                    '<tr ><td style="text-align:center">' + (count+1) +
+                    '</td><td style="text-align:left">' + result.spname[count]+ ' ' + result.level[count]+ ' ' + result.gender[count] +
+                    '</td><td  style="text-align:center">' + result.rank[count] +
+                    '</td><td  style="text-align:center">' + result.score[count] +
+                    '</td></tr>');
+
+            }
+
+            $('#tableScorelist tfoot').append(
+                    '<tr ><td style="text-align:right" colspan="3">คะแนนรวม</td><td  style="text-align:center">' + sum +
+                    '</td></tr>');
         }
     });
 })
@@ -140,11 +176,13 @@ $.ajax({
     type: "POST",
     url: "ajax/get_score.php",
     success: function(result) {
-        
+
         for (count = 0; count < result.num.length; count++) {
-            
+
             $('#tableScore').append(
-                '<tr ><td style="text-align:center">' + result.num[count] +
+                '<tr data-toggle="modal" data-target="#modal_scorelist" data-whatever="' + result
+                .colorcode[
+                    count] + '"><td style="text-align:center">' + result.num[count] +
                 '</td><td  style="text-align:center">' + result.colorname[count] +
                 '</td><td  style="text-align:center">' + result.score[count] +
                 '</td></tr>');
@@ -192,7 +230,8 @@ $.ajax({
                 '<tr data-toggle="modal" data-target="#modal_sport" data-whatever="' + result
                 .spcode[
                     count] + '"><td style="text-align:center">' + result.timetime[count] +
-                '</td><td  style="text-align:center">' + result.spname[count] +
+                '</td><td  style="text-align:center">' + result.spname[count] + ' ' + result.level[
+                    count] + ' ' + result.gender[count] +
                 '</td><td  style="text-align:center">' + match +
                 '</td><td  style="text-align:center">' + resultcolor +
                 '</td></tr>');
@@ -243,7 +282,9 @@ $.ajax({
         var table = $('#tableRed').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
@@ -280,7 +321,9 @@ $.ajax({
         var table = $('#tableBlue').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
@@ -317,7 +360,9 @@ $.ajax({
         var table = $('#tableGreen').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
@@ -354,7 +399,9 @@ $.ajax({
         var table = $('#tableYellow').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
@@ -391,7 +438,9 @@ $.ajax({
         var table = $('#tableRedTC').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
@@ -428,7 +477,9 @@ $.ajax({
         var table = $('#tableBlueTC').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
@@ -465,7 +516,9 @@ $.ajax({
         var table = $('#tableGreenTC').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
@@ -502,7 +555,9 @@ $.ajax({
         var table = $('#tableYellowTC').DataTable({
             "paging": true,
             "pageLength": 30,
-            "order": [[3, 'desc']],
+            "order": [
+                [3, 'desc']
+            ],
             "lengthChange": false,
             "searching": true,
             "ordering": true,
