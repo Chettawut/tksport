@@ -16,11 +16,12 @@
                             <label class="col-form-label">ชื่อ Sport</label>
                             <input type="text" class="form-control" name="spname" id="spname" required>
                         </div>
+                        
                         <div class="form-group col-lg-4 col-12">
-                            <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
-                            <select class="form-control" name="status" id="status">
-                                <option value="Y">เปิดการใช้งาน</option>
-                                <option value="N">ปิดการใช้งาน</option>
+                            <label for="recipient-name" class="col-form-label">หมวดประเภทกีฬา</label>
+                            <select class="form-control" name="category" id="category">
+                                <option value="1">กีฬาทั่วไป</option>
+                                <option value="2">กรีฑา</option>
                             </select>
                         </div>
                     </div>

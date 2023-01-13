@@ -84,6 +84,8 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         success: function(result) {
             modal.find('.modal-body #spcode').val(result.spcode);
             modal.find('.modal-body #spname').val(result.spname);
+            modal.find('.modal-body #category').val(result.category);
+            
         }
     });
 

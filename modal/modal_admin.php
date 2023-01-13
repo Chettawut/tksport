@@ -56,7 +56,7 @@
                             line-height: 25px;
                             color: var(--darkreader-inline-color) !important;
                             --darkreader-inline-color: #c8c4bd;">
-                                        นางจักรพันธ์ ดวงจิตต์เจริญ
+                                        นายจักรพันธ์ ดวงจิตต์เจริญ
                                         <br>
                                         นักเรียน
                                         <br>

@@ -94,7 +94,8 @@ include_once('backend/conn.php');
                     <button type="button" class="btn btn-outline-light me-2 " data-bs-toggle="modal"
                         data-bs-target="#exampleModalToggle"><img class="icon-change"
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVR4nO2SvQ7BYBiFq4vJQmJRG4bubsFmcyusXERvQppOSETchMUiNiOJn43hkS85RKIt4hNLn+RdTs57Ttu3jpNhA8ADQuCoiYC6zfAdzxitYqMgVODIBGrG0oY2Co4Kuz8tUJW2t1FwUJj3q4JIYWPdw8xEWmijoAFsE45c+7rAoMMO9bkOOryd8IxEABdoAgNgDiyBk2YprS+P+0lwHugBm5g/Jwnj7ZrdV+FlYPGwuAYCoA34QEHjSwvkuWF2y2kFMxnNJ2i9+cY5oAOstDtNM19kKr4T/ghQ0u45zWQF528FGU4MV3Z+ORoPzBgyAAAAAElFTkSuQmCC"
-                            width="21" height="22" viewBox="0 0 21 22" fill="none" class="block" data-v-13416097=""> Login
+                            width="21" height="22" viewBox="0 0 21 22" fill="none" class="block" data-v-13416097="">
+                        Login
                     </button>
                 </div>
                 <?php
@@ -190,73 +191,145 @@ include_once('backend/conn.php');
                             </a>
                         </div>
                         <div class="web ">
-                            <!-- <a id="nav-programtlist-tab" data-toggle="tab"  href="#nav-programlist"
-                                role="tab" aria-controls="nav-programlist" aria-selected="false">
-                                <div class="card">
-                                    <img src="img/โปรแกรมการแข่งขัน.png" alt="">
-                                </div>
-                            </a> -->
-                            <a href="">
+                            <a id="nav-programtlist-tab" data-toggle="tab" href="#nav-programlist" role="tab"
+                                aria-controls="nav-programlist" aria-selected="false">
                                 <div class="card">
                                     <img src="img/โปรแกรมการแข่งขัน.png" alt="">
                                 </div>
                             </a>
+
                         </div>
                         <div class="web ">
-                            <a href="#" class="text-white">
+                            <a class="nav-item nav-link" id="nav-sportlist-tab" data-toggle="tab" href="#nav-sportlist"
+                                role="tab" aria-controls="nav-sportlist" aria-selected="false">
                                 <div class="card">
                                     <img src="img/กีฬาที่จัดแข่ง.png" alt="">
                                 </div>
                             </a>
+
                         </div>
 
                     </div>
-                    <div class="row table-s-p">
-                        <div class="pic-sportdays">
-                            <div class="text-score"><h2>ภาพกิจกรรม</h2></div>
-                            <div class="all-pic-sportdays">
-                                <div class="post">
-                                    <div class="post-content">
-                                        <img src="img/พิธีเปิดและขบวน/ภาพปก.JPG" alt="">
-                                        <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
-                                    </div>
-
-                                    <div class="post-content">
-                                        <img src="img\พิธีเปิดและขบวน\พิธีเปิด-3.JPG" alt="">
-                                        <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
-                                    </div>
-
-                                    <div class="post-content">
-                                        <img src="img\พิธีเปิดและขบวน\เขียว_เทพี.jpg" alt="">
-                                        <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
-                                    </div>
-                                    
+                    <div class="row">
+                        <div class="col-lg-8 col-12">
+                            <div class="pic-sportdays">
+                                <div class="text-score">
+                                    <h2>ภาพกิจกรรม</h2>
                                 </div>
-                                
-                                
-                            </div>
-                        </div>
-                        <div class="table-score">
-                            <div class="text-score"><h2>รายงานผลคะแนน</h2></div>
-                            <div class="form-group col-lg-12 col-12 size space-t-32">
-                                <table name="tableScore" id="tableScore" class="table table-bordered table-striped ">
-                                    <thead style=" background-color:#D6EAF8;">
-                                        <tr>
-                                            <th style="text-align:center">อันดับ</th>
-                                            <th style="text-align:center">ชื่อสี</th>
-                                            <th style="text-align:center">คะแนน</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                                <div class="all-pic-sportdays">
+                                    <div class="post">
+                                        <div class="post-content">
+                                            <img src="img/พิธีเปิดและขบวน/ภาพปก.JPG" alt="">
+                                            <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
+                                        </div>
 
-                                    </tbody>
-                                </table>
+                                        <div class="post-content">
+                                            <img src="img\พิธีเปิดและขบวน\พิธีเปิด-3.JPG" alt="">
+                                            <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
+                                        </div>
+
+                                        <div class="post-content">
+                                            <img src="img\พิธีเปิดและขบวน\เขียว_เทพี.jpg" alt="">
+                                            <p style="text-align:center">บรรยากาศพิธีเปิดและขบวนกีฬาสี</p>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
-                        
+                        <div class="col-lg-4 col-12" >
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-main-tab" data-toggle="tab"
+                                        href="#nav-main" role="tab" aria-controls="nav-main"
+                                        aria-selected="true">คะแนนทั้งหมด</a>
+                                    <a class="nav-item nav-link" id="nav-boy-tab" data-toggle="tab" href="#nav-boy"
+                                        role="tab" aria-controls="nav-boy" aria-selected="false">กีฬาชาย</a>
+                                    <a class="nav-item nav-link" id="nav-girl-tab" data-toggle="tab"
+                                        href="#nav-girl" role="tab" aria-controls="nav-girl"
+                                        aria-selected="false">กีฬาหญิง</a>
+                                </div>
+                            </nav>
+
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-main" role="tabpanel"
+                                    aria-labelledby="nav-main-tab">
+                                    <div class="table-score">
+                                        <div class="text-score">
+                                            <br>
+                                            <h2>ตารางผลคะแนน</h2>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-12 size space-t-32">
+                                            <table name="tableScore" id="tableScore"
+                                                class="table table-bordered table-striped ">
+                                                <thead style=" background-color:#D6EAF8;">
+                                                    <tr>
+                                                        <th style="text-align:center">อันดับ</th>
+                                                        <th style="text-align:center">ชื่อสี</th>
+                                                        <th style="text-align:center">คะแนน</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-boy" role="tabpanel" aria-labelledby="nav-boy-tab">
+                                    <div class="table-score">
+                                        <div class="text-score">
+                                        <br>
+                                            <h2>ผลคะแนน กีฬาชาย</h2>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-12 size space-t-32">
+                                            <table name="tableScoreBoy" id="tableScoreBoy"
+                                                class="table table-bordered table-striped ">
+                                                <thead style=" background-color:#D6EAF8;">
+                                                    <tr>
+                                                        <th style="text-align:center">อันดับ</th>
+                                                        <th style="text-align:center">ชื่อสี</th>
+                                                        <th style="text-align:center">คะแนน</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-girl" role="tabpanel" aria-labelledby="nav-girl-tab">
+                                    <div class="table-score">
+                                        <div class="text-score">
+                                        <br>
+                                            <h2>ผลคะแนน กีฬาหญิง</h2>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-12 size space-t-32">
+                                            <table name="tableScoreGirl" id="tableScoreGirl"
+                                                class="table table-bordered table-striped ">
+                                                <thead style=" background-color:#D6EAF8;">
+                                                    <tr>
+                                                        <th style="text-align:center">อันดับ</th>
+                                                        <th style="text-align:center">ชื่อสี</th>
+                                                        <th style="text-align:center">คะแนน</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    
+
+
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-studentlist" role="tabpanel" aria-labelledby="nav-studentlist-tab">
@@ -481,8 +554,11 @@ include_once('backend/conn.php');
             </div>
         </div>
     </footer>
-    <?php include_once('modal/modal_joblist.php');?>
+    
     <?php include_once('modal/modal_scorelist.php');?>
+    <?php include_once('modal/modal_scorelistboy.php');?>
+    <?php include_once('modal/modal_scorelistgirl.php');?>
+    <?php include_once('modal/modal_joblist.php');?>
     <?php include_once('modal/modal_activity.php');?>
     <?php include_once('modal/modal_addactivity.php');?>
     <?php include_once('modal/modal_admin.php');?>

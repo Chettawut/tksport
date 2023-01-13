@@ -125,6 +125,78 @@ $('#modal_scorelist').on('show.bs.modal', function(event) {
     });
 })
 
+$('#modal_scorelistboy').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var modal = $(this)
+
+    $("#tableScorelistboy tbody").empty();
+    $("#tableScorelistboy tfoot").empty();
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/getsup_scoreboy.php",
+        data: "idcode=" + recipient,
+        success: function(result) {
+
+            let sum = 0
+
+            for (count = 0; count < result.spname.length; count++) {
+
+                sum+=parseInt(result.score[count])
+
+                $('#tableScorelistboy tbody').append(
+                    '<tr ><td style="text-align:center">' + (count+1) +
+                    '</td><td style="text-align:left">' + result.spname[count]+ ' ' + result.level[count]+ ' ' + result.gender[count] +
+                    '</td><td  style="text-align:center">' + result.rank[count] +
+                    '</td><td  style="text-align:center">' + result.score[count] +
+                    '</td></tr>');
+
+            }
+
+            $('#tableScorelistboy tfoot').append(
+                    '<tr ><td style="text-align:right" colspan="3">คะแนนรวม</td><td  style="text-align:center">' + sum +
+                    '</td></tr>');
+        }
+    });
+})
+
+$('#modal_scorelistgirl').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var modal = $(this)
+
+    $("#tableScorelistgirl tbody").empty();
+    $("#tableScorelistgirl tfoot").empty();
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/getsup_scoregirl.php",
+        data: "idcode=" + recipient,
+        success: function(result) {
+
+            let sum = 0
+
+            for (count = 0; count < result.spname.length; count++) {
+
+                sum+=parseInt(result.score[count])
+
+                $('#tableScorelistgirl tbody').append(
+                    '<tr ><td style="text-align:center">' + (count+1) +
+                    '</td><td style="text-align:left">' + result.spname[count]+ ' ' + result.level[count]+ ' ' + result.gender[count] +
+                    '</td><td  style="text-align:center">' + result.rank[count] +
+                    '</td><td  style="text-align:center">' + result.score[count] +
+                    '</td></tr>');
+
+            }
+
+            $('#tableScorelistgirl tfoot').append(
+                    '<tr ><td style="text-align:right" colspan="3">คะแนนรวม</td><td  style="text-align:center">' + sum +
+                    '</td></tr>');
+        }
+    });
+})
+
 
 //เพิ่ม Person
 $("#frmRegister").submit(function(e) {
@@ -189,6 +261,43 @@ $.ajax({
         }
     }
 });
+
+$.ajax({
+    type: "POST",
+    url: "ajax/get_scoreboy.php",
+    success: function(result) {
+
+        for (count = 0; count < result.num.length; count++) {
+
+            $('#tableScoreBoy').append(
+                '<tr data-toggle="modal" data-target="#modal_scorelistboy" data-whatever="' + result
+                .colorcode[
+                    count] + '"><td style="text-align:center">' + result.num[count] +
+                '</td><td  style="text-align:center">' + result.colorname[count] +
+                '</td><td  style="text-align:center">' + result.score[count] +
+                '</td></tr>');
+        }
+    }
+});
+
+$.ajax({
+    type: "POST",
+    url: "ajax/get_scoregirl.php",
+    success: function(result) {
+
+        for (count = 0; count < result.num.length; count++) {
+
+            $('#tableScoreGirl').append(
+                '<tr data-toggle="modal" data-target="#modal_scorelistgirl" data-whatever="' + result
+                .colorcode[
+                    count] + '"><td style="text-align:center">' + result.num[count] +
+                '</td><td  style="text-align:center">' + result.colorname[count] +
+                '</td><td  style="text-align:center">' + result.score[count] +
+                '</td></tr>');
+        }
+    }
+});
+
 
 $.ajax({
     type: "POST",

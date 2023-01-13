@@ -3,9 +3,9 @@
     include('../../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
     
-    $StrSQL = "INSERT INTO sport ( `spname`,`status`) ";
+    $StrSQL = "INSERT INTO sport ( `spname`,category,`status`) ";
     $StrSQL .= "VALUES (";
-    $StrSQL .= "'".$_POST["add_spname"]."','Y' ";
+    $StrSQL .= "'".$_POST["add_spname"]."','".$_POST["add_category"]."','Y' ";
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
     

@@ -5,7 +5,7 @@
     date_default_timezone_set("Asia/Bangkok");
 
     $strSQL = "UPDATE sport SET ";
-    $strSQL .= "spname='".$_POST["spname"]."',status='".$_POST["status"]."' ";
+    $strSQL .= "spname='".$_POST["spname"]."',category='".$_POST["category"]."' ";
     $strSQL .= "WHERE spcode= '".$_POST["spcode"]."' ";
 
     
